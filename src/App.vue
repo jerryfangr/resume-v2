@@ -1,29 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <main-section></main-section>
+    <nav-bar></nav-bar>
+
   </div>
 </template>
 
 <script>
-import './style/normalize.scss';
-import './style/common.scss';
-import HelloWorld from './components/HelloWorld.vue'
+import mainSection from './components/main-section/main-section';
+import navBar from './components/nav-bar/nav-bar';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    mainSection,
+    navBar
   }
 }
 </script>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background: rgb(215,222,231);
+  background: linear-gradient(135deg, #d7dee7 0%, #c9d0da 100%);
 }
 </style>

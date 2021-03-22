@@ -45,7 +45,7 @@
       <!-- header image start -->
       <div class="main-part avatar">
         <div class="bubble bubble-center">
-          <img class="image" :src="avatar" alt="" />
+          <img class="image" :src="avatar"/>
         </div>
       </div>
       <!-- header image end -->
@@ -303,6 +303,7 @@ section.main {
           overflow: hidden;
           .image {
             width: 95%;
+            height: auto;
             @include abs-layout(center);
             z-index: 1;
           }

@@ -1,7 +1,7 @@
 <template>
   <section class="skill">
     <div 
-      class="skill-item animate__bounceInUp"
+      class="skill-item"
       v-for="skill in formatedSkills"
       :key="skill.title"
     >
@@ -125,16 +125,23 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   section.skill {
     .skill-item {
-      margin-top: 2vmin;
+      &:nth-child(n+2) {
+        margin-top: 4vmin;
+      }
       background-color: #f4f7f8;
       color: $text-color-title;
       font-weight: 600;
       font-size: 0;
       padding: 1vmin 0;
       box-shadow: 0 0 0.5vmin 1px #d8d2d2;
+      transition: all .3s;
+      &:hover {
+        transform: scale(1.01);
+        box-shadow: 0 0 2vmin 1px #c7bdbd;
+      }
       .skill-text {
         float: left;
       }

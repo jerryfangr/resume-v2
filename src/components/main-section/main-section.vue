@@ -3,13 +3,14 @@
     <div class="container">
       <!-- about me start -->
       <div class="main-part about">
+        <!-- message box start -->
         <div v-if="timer > 0" class="message-box name animate__bounceIn">
           <div class="title">嘿! 你好啊! 我是 </div>
           <div class="content">{{user.name}}</div>
         </div>
 
         <div v-if="timer > 1" class="message-box school animate__bounceIn">
-          毕业于: {{user.school}}
+          毕业于 {{user.school}}
         </div>
 
         <div v-if="timer > 2" class="message-box age animate__bounceIn">
@@ -27,9 +28,12 @@
         <div v-if="timer > 5" class="message-box mail animate__bounceIn">
           邮箱在这里: {{user.mail}}
         </div>
+        <!-- message box end -->
 
+        <!-- bubble start -->
         <div class="bubble bubble-top"></div>
         <div class="bubble bubble-bottom"></div>
+        <!-- bubble end -->
       </div>
       <!-- about me end -->
 
@@ -43,9 +47,28 @@
 
       <!-- more about me (website) start -->
       <div class="main-part more">
-        
+        <!-- website icon start -->        
+        <a class="circle-link github" :href="user.github" target="_blank" title="github">
+          <div class="wrapper">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-github"></use>
+            </svg>
+          </div>
+        </a>
+
+        <a class="circle-link blog" :href="user.blog" target="_blank" title="blog">
+          <div class="wrapper">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-blogging"></use>
+            </svg>
+          </div>
+        </a>
+        <!-- website icon end -->
+
+        <!-- bubble start -->
         <div class="bubble bubble-top"></div>
         <div class="bubble bubble-bottom"></div>
+        <!-- bubble end -->
       </div>
       <!-- more about me (website) end -->
     </div>
@@ -66,7 +89,9 @@ export default {
         work: '前端方向',
         gender: '男',
         mail: 'xdxtf@qq.com',
-        school: '上海杉达学院'
+        school: '上海杉达学院',
+        blog: 'https://jerryfangr.github.io',
+        github: 'https://github.com/jerryfangr'
       }
     };
   },
@@ -77,7 +102,7 @@ export default {
       if (this.timer >= 100) {
         clearInterval(timerId);
       }
-    }, 1000)
+    }, 900)
   },
 }
 </script>
@@ -149,12 +174,34 @@ section.main {
         margin-left: 4vmin;
       }
     }
+
+    .circle-link {
+      display: inline-block;
+      .wrapper {
+        display: inline-block;
+        transition: all .5s;
+        &:hover {
+          box-shadow: 0 0 2vmin 0.2vmin #adb7c5;
+          transform: scale(1.1);
+        }
+
+        width: 6vmin;
+        height: 6vmin;
+        background-color: #f7f6f6;
+        box-shadow: 0 0 1vmin 1px #ddd;
+        border-radius: 50%;
+        text-align: center;
+        position: relative;
+        svg.icon {
+          @include abs-layout(center);
+        }
+      }
+    }
   }
 }
 
 
-@media screen and (min-width: 500px) {
-  /* layout */
+@media screen and (min-width: 600px) {
   section.main {
     margin: 0 auto;
     margin-top: 7vmin;
@@ -244,6 +291,31 @@ section.main {
           @include bubble(9vmin, 0s)
         }
 
+        .circle-link {
+          position: absolute;
+          .wrapper {
+            width: 8vmin;
+            height: 8vmin;
+            font-size: 6vmin;
+            color: #313e55;
+          }
+
+          &.github {
+            top: 15vmin;
+            left: 5vmin;
+          }
+
+          &.blog {
+            .wrapper {
+              width: 12vmin;
+              height: 12vmin;
+              font-size: 8vmin;
+            }
+
+            top: 31vmin;
+            left: 5vmin;
+          }
+        }
       }
 
       &::after {
@@ -253,7 +325,5 @@ section.main {
       }
     }
   }
-
-  /* style */
 }
 </style>

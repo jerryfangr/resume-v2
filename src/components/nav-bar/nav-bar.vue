@@ -1,11 +1,11 @@
 <template>
-  <section class="dock">
+  <nav class="dock">
     <div class="container">
       <ul class="dock-icons" @mouseleave="clearIcon">
         <li
           v-for="(section, index) in sections"
           :key="section"
-          :class="{'icon': true}"
+          class="section-icon"
           @mousemove="activeIcon($event, index)"
           @click="scrollTo($event, index)"
           ref="section"
@@ -14,7 +14,7 @@
         </li>
       </ul>
     </div>
-  </section>
+  </nav>
 </template>
 
 <script>
@@ -70,8 +70,9 @@ export default {
 
 <style lang="scss" scoped>
 /* layout */
-section.dock {
+nav.dock {
   display: inline-block;
+  width: 100vmin;
   @include abs-layout(bottom, 0);
   position: fixed;
   .container {
@@ -90,7 +91,7 @@ section.dock {
         display: inline-block;
       }
 
-      .icon {
+      .section-icon {
         margin: 0 .2vmin;
         font-size: 7vmin;
         text-align: center;
@@ -100,8 +101,8 @@ section.dock {
         }
       }
 
-      .icon.loading {
-        animation: 1s loading ease-in infinite;
+      .section-icon.loading {
+        animation: .9s loading ease-in-out infinite;
       }
     }
   }
@@ -112,7 +113,7 @@ section.dock {
     transform: translateY(0);
   }
   60% {
-    transform: translateY(-30%);
+    transform: translateY(-22%);
   }
 }
 

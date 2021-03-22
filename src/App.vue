@@ -1,24 +1,34 @@
 <template>
   <div id="app">
+    <nav-bar></nav-bar>
+    
+    <!--  -->
+    <title-section>介绍</title-section>
     <main-section></main-section>
+
     <section class="download">
       <a href="/方涵聪-应聘前端-2021.pdf" download>下载 PDF 简历</a>
     </section>
-    <nav-bar></nav-bar>
+    
+
+    <title-section>技能</title-section>
 
   </div>
 </template>
 
 <script>
 import 'animate.css';
+import './assets/ali-icon';
+import titleSection from './components/title-section/title-section';
 import mainSection from './components/main-section/main-section';
 import navBar from './components/nav-bar/nav-bar';
 
 export default {
   name: 'App',
   components: {
+    titleSection,
     mainSection,
-    navBar
+    navBar,
   }
 }
 </script>
@@ -33,14 +43,13 @@ export default {
   background: linear-gradient(315deg, #c4cbd4 0%, #e6eaf0 30%, #e6eaf0 100%);
   section {
     width: 100vmin;
+    margin: 0 auto;
+    margin-bottom: 5vmin;
   }
 
   section.download {
-    margin: 0 auto;
-    margin-top: 5vmin;
     text-align: center;
     a {
-      text-decoration: none;
       display: inline-block;
       font-size: 2vmin;
       line-height: 16px;

@@ -66,3 +66,12 @@ $bg-color-mask:rgba(0, 0, 0, 0.4);//遮罩颜色
     @include abs-bottom($distance);
   }
 }
+
+/* ali iconfont request */
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}

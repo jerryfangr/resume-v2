@@ -1,20 +1,20 @@
 <template>
-  <div class="dock">
+  <section class="dock">
     <div class="container">
-      <ul class="dock-icons">
+      <ul class="dock-icons" @mouseleave="clearIcon">
         <li
           v-for="(section, index) in sections"
           :key="section"
-          :class="{'icon': true, 'active': index===current, 'active-sibling': isSibling(index)}"
-          @mouseenter="activeIcon(index)"
-          @mouseleave="activeIcon(-999)"
-          @click="scrollTo(index)"
+          :class="{'icon': true}"
+          @mousemove="activeIcon($event, index)"
+          @click="scrollTo($event, index)"
+          ref="section"
         >
           {{ section }}
         </li>
       </ul>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -27,8 +27,30 @@ export default {
   },
 
   methods: {
-    activeIcon(index) {
+    activeIcon(e, index) {
       this.current = index;
+      const item = e.target;
+      const itemRect = item.getBoundingClientRect();
+      const offset = Math.abs(e.clientX - itemRect.left) / itemRect.width;
+      
+      const prev = item.previousElementSibling || null
+      const next = item.nextElementSibling || null
+      const defaultScale = 0.4;
+      
+      if (prev) {
+        prev.style.transform = `scale(${1 + defaultScale * Math.abs(offset - 1)}`;
+      }
+      item.style.transform = `scale(${1 + defaultScale * Math.abs(1 + defaultScale)}`;
+      if (next) {
+        next.style.transform = `scale(${1 + defaultScale * offset}`;
+      }
+    },
+
+    clearIcon() {
+      this.current = -999;
+      this.$refs.section?.forEach(ele => {
+        ele.style.transform = '';
+      })
     },
 
     isSibling(index) {
@@ -38,8 +60,9 @@ export default {
       return false;
     },
 
-    scrollTo(index) {
-      const section = this.sections[index];
+    scrollTo(e, index) {
+      e.target.classList.add('loading');
+      // const section = this.sections[index];
     }
   },
 };
@@ -47,20 +70,19 @@ export default {
 
 <style lang="scss" scoped>
 /* layout */
-.dock {
+section.dock {
+  display: inline-block;
+  @include abs-layout(bottom, 0);
   position: fixed;
-  bottom: 0;
-  width: 100vw;
-  height: 12vmin;
   .container {
     height: 12vmin;
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 0 1vmin 0 rgba(97, 104, 194, 0.37);
     backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
     position: relative;
-    overflow: hidden;
     .dock-icons {
+      display: inline-block;
+      white-space: nowrap;
       font-size: 0;
       @include abs-layout(center);
       li {
@@ -69,22 +91,30 @@ export default {
       }
 
       .icon {
-        font-size: 50px;
-        transition: transform .5s;
-        margin-left: 2vmin;
+        margin: 0 .2vmin;
+        font-size: 7vmin;
+        text-align: center;
+        transition: transform .1s;
+        &:hover {
+          cursor: default;
+        }
       }
 
-      .icon.active {
-        transform: scale(1.5);
+      .icon.loading {
+        animation: 1s loading ease-in infinite;
       }
-      .icon.active-sibling {
-        transform: scale(1.2);
-      }
-
     }
   }
 }
 
+@keyframes loading {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-30%);
+  }
+}
 
 @media screen and (min-width: 800px) {
 }

@@ -14,8 +14,9 @@ export default {
   section.title {
     text-align: left;
     .text {
-      color: #3d4451;
+      color: $text-color-title;
       font-size: 4vmin;
+      text-shadow: 1px 1px 1px $text-color-title;
       height: 7vmin;
     }
     

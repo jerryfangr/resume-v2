@@ -5,28 +5,33 @@
       <div class="main-part about">
         <!-- message box start -->
         <div v-if="timer > 0" class="message-box name animate__bounceIn">
-          <div class="title">嘿! 你好啊! 我是 </div>
-          <div class="content">{{user.name}}</div>
+          <div class="title">嘿! 你好啊! 我是</div>
+          <div class="content">{{ user.name }}</div>
         </div>
 
         <div v-if="timer > 1" class="message-box school animate__bounceIn">
-          毕业于 {{user.school}}
+          毕业于 {{ user.school }}
         </div>
 
         <div v-if="timer > 2" class="message-box age animate__bounceIn">
-          {{user.age}}岁了
+          {{ user.age }}岁了
         </div>
 
         <div v-if="timer > 3" class="message-box gender animate__bounceIn">
-          右图显然是{{user.gender}}的
+          右图显然是{{ user.gender }}的
         </div>
 
         <div v-if="timer > 4" class="message-box work animate__bounceIn">
-          求职{{user.work}}
+          求职方向 {{ user.work }}
         </div>
 
-        <div v-if="timer > 5" class="message-box mail animate__bounceIn">
-          邮箱在这里: {{user.mail}}
+        <div
+          v-if="timer > 5"
+          class="message-box mail animate__bounceIn"
+          title="点击复制邮箱"
+          @click="copyToClipboard(user.mail)"
+        >
+          邮箱在这里: {{ user.mail }}
         </div>
         <!-- message box end -->
 
@@ -40,30 +45,46 @@
       <!-- header image start -->
       <div class="main-part avatar">
         <div class="bubble bubble-center">
-          <img class="image" :src="avatar" alt="">
+          <img class="image" :src="avatar" alt="" />
         </div>
       </div>
       <!-- header image end -->
 
       <!-- more about me (website) start -->
       <div class="main-part more">
-        <!-- website icon start -->        
-        <a class="circle-link github" :href="user.github" target="_blank" title="github">
+        <!-- website icon start -->
+        <a
+          class="circle-link github"
+          :href="user.github"
+          target="_blank"
+          title="github"
+        >
           <div class="wrapper">
             <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-github"></use>
+              <use xlink:href="#icon-github"></use>
             </svg>
           </div>
         </a>
 
-        <a class="circle-link blog" :href="user.blog" target="_blank" title="blog">
+        <a
+          class="circle-link blog"
+          :href="user.blog"
+          target="_blank"
+          title="blog"
+        >
           <div class="wrapper">
             <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-blogging"></use>
+              <use xlink:href="#icon-blogging"></use>
             </svg>
           </div>
         </a>
         <!-- website icon end -->
+
+        <!-- message box start -->
+        <div v-if="timer > 6" class="message-box tip animate__bounceIn">
+          ↑GitHub 和 ↓博客
+        </div>
+        <!-- message box start -->
 
         <!-- bubble start -->
         <div class="bubble bubble-top"></div>
@@ -76,7 +97,7 @@
 </template>
 
 <script>
-import imageAvatar from '@/assets/avatar.png';
+import imageAvatar from "@/assets/avatar.png";
 
 export default {
   data() {
@@ -84,15 +105,15 @@ export default {
       timer: 0,
       avatar: imageAvatar,
       user: {
-        name: '方涵聪',
-        age: '23',
-        work: '前端方向',
-        gender: '男',
-        mail: 'xdxtf@qq.com',
-        school: '上海杉达学院',
-        blog: 'https://jerryfangr.github.io',
-        github: 'https://github.com/jerryfangr'
-      }
+        name: "方涵聪",
+        age: "23",
+        work: "前端",
+        gender: "男",
+        mail: "xdxtf@qq.com",
+        school: "上海杉达学院",
+        blog: "https://jerryfangr.github.io",
+        github: "https://github.com/jerryfangr",
+      },
     };
   },
 
@@ -102,9 +123,20 @@ export default {
       if (this.timer >= 100) {
         clearInterval(timerId);
       }
-    }, 900)
+    }, 900);
   },
-}
+
+  methods: {
+    copyToClipboard(content) {
+      const ele = document.createElement("input"); 
+      ele.setAttribute("value", content); 
+      document.body.appendChild(ele); 
+      ele.select(); 
+      document.execCommand("copy"); 
+      document.body.removeChild(ele);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -115,7 +147,7 @@ export default {
   border-radius: 50%;
   background: #d3dbe7;
   background: linear-gradient(315deg, #d0d9e6 0%, #e7edf5 50%, #edf2f8 100%);
-  box-shadow: 2px 2px $size*0.03 $size*0.01 #edf2f8;
+  box-shadow: 2px 2px $size * 0.03 $size * 0.01 #edf2f8;
   @if $active == hover {
     &:hover {
       animation: breath-scale 2s ease-in-out infinite $delay alternate-reverse;
@@ -179,7 +211,7 @@ section.main {
       display: inline-block;
       .wrapper {
         display: inline-block;
-        transition: all .5s;
+        transition: all 0.5s;
         &:hover {
           box-shadow: 0 0 2vmin 0.2vmin #adb7c5;
           transform: scale(1.1);
@@ -200,7 +232,6 @@ section.main {
   }
 }
 
-
 @media screen and (min-width: 600px) {
   section.main {
     margin: 0 auto;
@@ -214,15 +245,15 @@ section.main {
 
       .bubble {
         position: absolute;
-        transition: all .5s;
-      }      
-      
+        transition: all 0.5s;
+      }
+
       .about {
         width: 28.4%;
         .bubble-top {
           top: 60%;
           left: 30%;
-          @include bubble(6vmin, .5s);
+          @include bubble(6vmin, 0.5s);
         }
 
         .bubble-bottom {
@@ -259,6 +290,7 @@ section.main {
         .message-box.mail {
           bottom: 13vmin;
           right: 1vmin;
+          cursor: pointer;
         }
       }
 
@@ -279,16 +311,22 @@ section.main {
 
       .more {
         width: 27.2%;
+
+        .message-box.tip {
+          top: 25vmin;
+          left: 5vmin;
+        }
+
         .bubble-bottom {
           bottom: 10%;
           left: 0;
-          @include bubble(5vmin, 0s)
+          @include bubble(5vmin, 0s);
         }
 
         .bubble-top {
           top: 5%;
           left: 0;
-          @include bubble(9vmin, 0s)
+          @include bubble(9vmin, 0s);
         }
 
         .circle-link {
@@ -313,7 +351,7 @@ section.main {
             }
 
             top: 31vmin;
-            left: 5vmin;
+            left: 6vmin;
           }
         }
       }

@@ -1,34 +1,42 @@
 <template>
   <div id="app">
     <nav-bar></nav-bar>
-    
-    <!--  -->
+
+    <!-- user info start -->
     <title-section>介绍</title-section>
     <main-section></main-section>
+    <!-- user info end -->
 
     <section class="download">
       <a href="/方涵聪-应聘前端-2021.pdf" download>下载 PDF 简历</a>
     </section>
     
-
+    <!-- skill start -->
     <title-section>技能</title-section>
+    <skill-section></skill-section>
+    <!-- skill end -->
 
+    <!-- portfolio start -->
+    <title-section>作品</title-section>
+    <!-- portfolio end -->
   </div>
 </template>
 
 <script>
 import 'animate.css';
 import './assets/ali-icon';
+import navBar from './components/nav-bar/nav-bar';
 import titleSection from './components/title-section/title-section';
 import mainSection from './components/main-section/main-section';
-import navBar from './components/nav-bar/nav-bar';
+import skillSection from './components/skill-section/skill-section';
 
 export default {
   name: 'App',
   components: {
+    navBar,
     titleSection,
     mainSection,
-    navBar,
+    skillSection,
   }
 }
 </script>
@@ -56,7 +64,7 @@ export default {
       padding: 2vmin 2vmin;
       border: 1px solid #cbcdcf;
       border-radius: 2px;
-      color: #3d4451;
+      color: $text-color-title;
       font-weight: bold;
       transition: box-shadow 0.3s;    
       &:hover {

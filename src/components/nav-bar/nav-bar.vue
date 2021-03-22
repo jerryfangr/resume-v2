@@ -75,6 +75,7 @@ nav.dock {
   width: 100vmin;
   @include abs-layout(bottom, 0);
   position: fixed;
+  z-index: 10;
   .container {
     height: 12vmin;
     background: rgba(255, 255, 255, 0.25);

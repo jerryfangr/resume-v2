@@ -140,7 +140,7 @@ export default {
       transition: all .3s;
       &:hover {
         transform: scale(1.01);
-        box-shadow: 0 0 2vmin 1px #c7bdbd;
+        box-shadow: 0 0 2vmin 1px #bebdbd;
       }
       .skill-text {
         float: left;

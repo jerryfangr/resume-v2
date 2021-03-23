@@ -18,6 +18,7 @@
 
     <!-- portfolio start -->
     <title-section>作品</title-section>
+    <portfolio-section></portfolio-section>
     <!-- portfolio end -->
   </div>
 </template>
@@ -29,6 +30,7 @@ import navBar from './components/nav-bar/nav-bar';
 import titleSection from './components/title-section/title-section';
 import mainSection from './components/main-section/main-section';
 import skillSection from './components/skill-section/skill-section';
+import portfolioSection from './components/portfolio-section/portfolio-section';
 
 export default {
   name: 'App',
@@ -37,6 +39,7 @@ export default {
     titleSection,
     mainSection,
     skillSection,
+    portfolioSection
   }
 }
 </script>

@@ -5,24 +5,7 @@
       v-for="portfolio in formatedportfolios"
       :key="portfolio.title"
     >
-      <!-- title start -->
-      <div class="portfolio-text title">
-        <div class="title-wrapper">{{portfolio.title}}</div>
-        <div class="level">{{portfolio.level}}</div>
-      </div>
-      <!-- title end -->
-
-      <!-- description start -->
-      <div class="portfolio-text description">
-        <p 
-          class="text"
-          v-for="(text, index) in portfolio.description"
-          :key="index"
-        >
-          {{text}}
-        </p>
-      </div>
-      <!-- description end -->
+      
     </div>
   </section>
 </template>

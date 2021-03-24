@@ -1,19 +1,4 @@
 # resume-v2
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Preview
+[click here](https://jerryfangr.github.io/resume-v2/dist/index.html)

@@ -5,7 +5,13 @@
       v-for="portfolio in formatedportfolios"
       :key="portfolio.title"
     >
-      
+      <div class="preview-image"></div>
+      <div class="title"></div>
+      <div class="description"></div>
+      <div class="code-link"></div>
+      <div class="preview-link"></div>
+      <div class="preview-qrcode"></div>
+
     </div>
   </section>
 </template>
@@ -17,6 +23,7 @@ export default {
       portfolios: [
         {
           title: '麦趣游戏盒',
+          previewImage: '预览图片',
           codeUrl: '源码链接',
           previewUrl: '预览连接',
           previewQRCode: '二维码地址',

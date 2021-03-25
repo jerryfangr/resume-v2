@@ -68,6 +68,14 @@ $bg-color-mask:rgba(0, 0, 0, 0.4);//遮罩颜色
   }
 }
 
+@mixin clearFix() {
+  content: '';
+  display: block;
+  height: 0;
+  width: 0;
+  clear: both;
+}
+
 /* ali iconfont request */
 .icon {
   width: 1em;

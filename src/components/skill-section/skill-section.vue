@@ -37,7 +37,7 @@ export default {
           level: '★★★★★',
           description: `
           熟悉 HTML5与标签语义化 nav、header、main、section、footer等。
-          熟悉 css 扩展语言 sass、less，css3 动画、过度效果、flex盒子、媒体查询等。
+          熟悉 css 预处理 sass、less，css3 动画、过度效果、flex盒子、媒体查询等。
           能独立根据设计稿实现网页布局与样式制作。
           `
         },
@@ -127,10 +127,8 @@ export default {
 
 <style lang="scss" scoped>
   section.skill {
+    margin-bottom: 7vmin;
     .skill-item {
-      &:nth-child(n+2) {
-        margin-top: 4vmin;
-      }
       background-color: #f4f7f8;
       color: $text-color-title;
       font-weight: 600;
@@ -138,13 +136,19 @@ export default {
       padding: 1vmin 0;
       box-shadow: 0 0 0.5vmin 1px #d8d2d2;
       transition: all .3s;
+
+      &:nth-child(n+2) {
+        margin-top: 3.5vmin;
+      }
+
       &:hover {
-        transform: scale(1.01);
         box-shadow: 0 0 2vmin 1px #bebdbd;
       }
+
       .skill-text {
         float: left;
       }
+
       .title {
         width: 30%;
         text-align: left;
@@ -152,6 +156,7 @@ export default {
         font-size: 2.8vmin;
         margin: 1vmin 0;
       }
+
       .description {
         width: 70%;
         font-size: 1.8vmin;
@@ -159,11 +164,9 @@ export default {
           margin: 1vmin 0;
         }
       }
+
       &::after {
-        content: "";
-        display: block;
-        width: 0;
-        clear: both;
+        @include clearFix();
       }
     }
   }

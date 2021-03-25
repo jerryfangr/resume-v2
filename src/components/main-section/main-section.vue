@@ -4,30 +4,30 @@
       <!-- about me start -->
       <div class="main-part about">
         <!-- message box start -->
-        <div v-if="timer > 0" class="message-box name animate__bounceIn">
+        <div v-if="timer > 0" class="message-box name animate__animated animate__bounceIn">
           <div class="title">嘿! 你好啊! 我是</div>
           <div class="content">{{ user.name }}</div>
         </div>
 
-        <div v-if="timer > 1" class="message-box school animate__bounceIn">
+        <div v-if="timer > 1" class="message-box school animate__animated animate__bounceIn">
           毕业于 {{ user.school }}
         </div>
 
-        <div v-if="timer > 2" class="message-box age animate__bounceIn">
+        <div v-if="timer > 2" class="message-box age animate__animated animate__bounceIn">
           {{ user.age }}岁了
         </div>
 
-        <div v-if="timer > 3" class="message-box gender animate__bounceIn">
+        <div v-if="timer > 3" class="message-box gender animate__animated animate__bounceIn">
           右图显然是{{ user.gender }}的
         </div>
 
-        <div v-if="timer > 4" class="message-box work animate__bounceIn">
+        <div v-if="timer > 4" class="message-box work animate__animated animate__bounceIn">
           求职方向 {{ user.work }}
         </div>
 
         <div
           v-if="timer > 5"
-          class="message-box mail animate__bounceIn"
+          class="message-box mail animate__animated animate__bounceIn"
           title="点击复制邮箱"
           @click="copyToClipboard(user.mail)"
         >
@@ -81,7 +81,7 @@
         <!-- website icon end -->
 
         <!-- message box start -->
-        <div v-if="timer > 6" class="message-box tip animate__bounceIn">
+        <div v-if="timer > 6" class="message-box tip animate__animated animate__bounceIn">
           ↑GitHub 和 ↓博客
         </div>
         <!-- message box start -->
@@ -118,12 +118,13 @@ export default {
   },
 
   mounted() {
+    const delay = 800;
     var timerId = setInterval(() => {
       this.timer++;
       if (this.timer >= 100) {
         clearInterval(timerId);
       }
-    }, 900);
+    }, delay);
   },
 
   methods: {
@@ -232,10 +233,8 @@ section.main {
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 300px) {
   section.main {
-    margin: 0 auto;
-    margin-top: 7vmin;
     height: 63vmin;
     .container {
       .main-part {

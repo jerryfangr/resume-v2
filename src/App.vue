@@ -20,6 +20,14 @@
     <title-section>作品</title-section>
     <portfolio-section></portfolio-section>
     <!-- portfolio end -->
+
+    <!-- portfolio start -->
+    <title-section>其他</title-section>
+    <!-- portfolio end -->
+
+    <!-- portfolio start -->
+    <title-section>留言</title-section>
+    <!-- portfolio end -->
   </div>
 </template>
 
@@ -45,20 +53,26 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  margin: 0;
-  padding: 1px;
-  width: 100%;
-  min-height: 100vh;
+section {
+  width: 100vmin;
+  max-width:100%;
+  margin: 0 auto;
+}
+body {
   background: #e6eaf0;
   background: linear-gradient(315deg, #c4cbd4 0%, #e6eaf0 30%, #e6eaf0 100%);
-  section {
-    width: 100vmin;
-    margin: 0 auto;
-    margin-bottom: 5vmin;
-  }
+}
+#app {
+  margin: 0;
+  // padding: 0.1px;
+  // overflow: hidden;
+  max-width:100%;
+  min-height: 100vh;
+  background: #e6eaf0;
+  // background: linear-gradient(315deg, #c4cbd4 0%, #e6eaf0 30%, #e6eaf0 100%);
 
   section.download {
+    margin-top: 5vmin;
     text-align: center;
     a {
       display: inline-block;

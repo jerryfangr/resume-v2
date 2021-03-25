@@ -12,12 +12,12 @@ export default {
 
 <style lang="scss">
   section.title {
+    margin: 5vmin auto;
     text-align: left;
     .text {
       color: $text-color-title;
       font-size: 4vmin;
       text-shadow: 1px 1px 1px $text-color-title;
-      height: 7vmin;
     }
     
   }

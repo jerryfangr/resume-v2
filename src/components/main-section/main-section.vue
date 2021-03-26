@@ -97,7 +97,7 @@
 </template>
 
 <script>
-import imageAvatar from "@/assets/avatar.png";
+import imageAvatar from '@/assets/avatar.png';
 
 export default {
   data() {
@@ -105,14 +105,14 @@ export default {
       timer: 0,
       avatar: imageAvatar,
       user: {
-        name: "方涵聪",
-        age: "23",
-        work: "前端",
-        gender: "男",
-        mail: "xdxtf@qq.com",
-        school: "上海杉达学院",
-        blog: "https://jerryfangr.github.io",
-        github: "https://github.com/jerryfangr",
+        name: '方涵聪',
+        age: '23',
+        work: '前端',
+        gender: '男',
+        mail: 'xdxtf@qq.com',
+        school: '上海杉达学院',
+        blog: 'https://jerryfangr.github.io',
+        github: 'https://github.com/jerryfangr',
       },
     };
   },
@@ -129,11 +129,11 @@ export default {
 
   methods: {
     copyToClipboard(content) {
-      const ele = document.createElement("input"); 
-      ele.setAttribute("value", content); 
+      const ele = document.createElement('input'); 
+      ele.setAttribute('value', content); 
       document.body.appendChild(ele); 
       ele.select(); 
-      document.execCommand("copy"); 
+      document.execCommand('copy'); 
       document.body.removeChild(ele);
     },
   },

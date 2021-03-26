@@ -64,13 +64,9 @@ body {
 }
 #app {
   margin: 0;
-  // padding: 0.1px;
-  // overflow: hidden;
   max-width:100%;
   min-height: 100vh;
   background: #e6eaf0;
-  // background: linear-gradient(315deg, #c4cbd4 0%, #e6eaf0 30%, #e6eaf0 100%);
-
   section.download {
     margin-top: 5vmin;
     text-align: center;

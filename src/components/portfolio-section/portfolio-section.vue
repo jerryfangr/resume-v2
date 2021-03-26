@@ -55,6 +55,15 @@
 
       <!-- project description start -->
       <div v-if="portfolio.showDesc" class="portfolio-info description">
+        <ul class="tags">
+          <li
+            v-for="(tag, index) in portfolio.tags"
+            :key="index"
+            class="tag-item"
+          >
+            {{ tag }}
+          </li>
+        </ul>
         <p
           :style="'animation-delay: ' + index * 0.8 + 's;'"
           class="text animate__animated animate__zoomIn animate__fast"
@@ -75,11 +84,11 @@ export default {
     return {
       portfolios: [
         {
-          title: "麦趣游戏盒",
-          previewImage: "预览图片",
-          codeUrl: "源码链接",
-          previewQRCode: "源码二维码地址",
-          tag: ["TypeScript", "Canvas", "MVC", "Webpack"],
+          title: '麦趣游戏盒',
+          previewImage: '预览图片',
+          codeUrl: '源码链接',
+          previewQRCode: '源码二维码地址',
+          tags: ['TypeScript', 'Canvas', 'MVC', 'Webpack', 'tag'],
           description: `
           项目为一个微型游戏盒，目前已基本实现的小游戏有魔塔和flappy bird。
           项目是初步看完TypeScript文档后，实现的第一个TS项目，由webpack配合ts-loader搭建的ts开发环境。
@@ -88,41 +97,45 @@ export default {
           `,
         },
         {
-          title: "小小音乐(手机端)",
-          previewImage: "预览图片",
-          codeUrl: "源码链接",
-          previewQRCode: "源码二维码地址",
-          tag: ["JavaScript", "Axios", "MVC", "Webpack", "NodeJs", "Express"],
+          title: '小小音乐(手机端)',
+          previewImage: '预览图片',
+          codeUrl: '源码链接',
+          previewQRCode: '源码二维码地址',
+          tags: ['JavaScript', 'Axios', 'MVC', 'Webpack', 'NodeJs', 'Express'],
           description: `
 
           `,
         },
         {
-          title: "在线简历",
-          previewImage: "预览图片",
-          codeUrl: "源码链接",
-          previewQRCode: "源码二维码地址",
-          tag: ["JavaScript", "Vue", "Sass", "Vue-cli"],
+          title: '在线简历',
+          previewImage: '预览图片',
+          codeUrl: '源码链接',
+          previewQRCode: '源码二维码地址',
+          tags: ['JavaScript', 'Vue', 'Sass', 'Vue-cli'],
+          description: `
+          一个自适应屏幕的在线简历，包含个人背景、技术栈、作品集、留言板。
+          网页样式是拾人牙慧，根据多个dribbble免费模板，重新设计而来。
+          项目用vue-cli & sass 搭建开发环境，每一个信息块都为设计为单独组件。
+          网页的要渲染的个人信息统一存放到了单独的json文件，便于未来替换在线api的需求。
+          留言板使用了 leancloud api存放留言信息。
+          `,
+        },
+        {
+          title: 'Gamer聊天室',
+          previewImage: '预览图片',
+          codeUrl: '源码链接',
+          previewQRCode: '源码二维码地址',
+          tags: ['Vue', 'Vue-router', 'Vuex', 'Socket.io', 'NodeJs', 'Express'],
           description: `
 
           `,
         },
         {
-          title: "Gamer聊天室",
-          previewImage: "预览图片",
-          codeUrl: "源码链接",
-          previewQRCode: "源码二维码地址",
-          tag: ["Vue", "Vue-router", "Vuex", "Socket.io", "NodeJs", "Express"],
-          description: `
-
-          `,
-        },
-        {
-          title: "箱",
-          previewImage: "预览图片",
-          codeUrl: "源码链接",
-          previewQRCode: "源码二维码地址",
-          tag: ["微信小程序", "云开发", "uniapp", "Vue"],
+          title: '箱',
+          previewImage: '预览图片',
+          codeUrl: '源码链接',
+          previewQRCode: '源码二维码地址',
+          tags: ['微信小程序', '云开发', 'uniapp', 'Vue'],
           description: `
 
           `,
@@ -134,8 +147,8 @@ export default {
   beforeMount() {
     this.portfolios.forEach((portfolio, index) => {
       portfolio.description = this.wordWrapFormat(portfolio.description);
-      this.$set(portfolio, "showQrCode", false);
-      this.$set(portfolio, "showDesc", false);
+      this.$set(portfolio, 'showQrCode', false);
+      this.$set(portfolio, 'showDesc', false);
     });
   },
 
@@ -145,8 +158,8 @@ export default {
       text.match(/.*\n/gi)?.forEach((content) => {
         const emptyRegExp = /^[\n ]{1,}$/gi;
         if (!emptyRegExp.test(content)) {
-          content = content.replace(/\n/gi, "");
-          content = content.replace(/^[ ]{1,}/gi, "");
+          content = content.replace(/\n/gi, '');
+          content = content.replace(/^[ ]{1,}/gi, '');
           newTexts.push(content);
         }
       });
@@ -159,7 +172,7 @@ export default {
 <style lang="scss" scoped>
 section.portfolio {
   padding: 0 4vmin;
-  // text-align: center;
+  text-align: center;
   .portfolio-item {
     background-color: #f4f7f8;
     color: $text-color-title;
@@ -181,7 +194,8 @@ section.portfolio {
 
     .image {
       position: relative;
-      .preview, .qrcode {
+      .preview,
+      .qrcode {
         width: 100%;
       }
 
@@ -230,10 +244,30 @@ section.portfolio {
       display: none;
       transform: rotateY(180deg);
     }
+
     .description {
       display: inline-block;
       text-align: left;
       text-indent: 2em;
+      .tags {
+        font-size: 0;
+        text-indent: 0;
+        .tag-item {
+          display: inline-block;
+          font-weight: 400;
+          color: #fff;
+          background: #929294;
+          position: relative;
+          font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
+          &::before {
+            content: "";
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 0.2vmin 0.15vmin rgba(0, 0, 0, .3);
+            @include abs-layout(left, 0);
+          }
+        }
+      }
     }
 
     .desc-button {
@@ -274,15 +308,29 @@ section.portfolio {
     }
 
     .portfolio-item.desc {
-      padding-bottom: 10vmin * $scale;
+      padding-bottom: 12vmin * $scale;
       .description {
         text-indent: 2em;
         font-size: 2vmin * $scale;
         .text:nth-child(n + 2) {
           margin-top: 1.5vmin * $scale;
         }
+        .tags {
+          .tag-item {
+            font-size: 1.8vmin * $scale;
+            margin-bottom: 5px;
+            margin-right: 5px;
+            box-shadow: 0 0 .2vmin 0 rgba(0, 0, 0, .4);
+            text-shadow: 0 0 .2vmin 0 #fff;
+            padding: .4vmin * $scale 1vmin * $scale .4vmin * $scale 2.2vmin * $scale;
+            &::before {
+              left: 1vmin;
+              width: 0.5vmin * $scale;
+              height: 0.5vmin * $scale;
+            }
+          }
+        }
       }
-
       .desc-button {
         width: 35vmin * $scale;
         bottom: 2.6vmin * $scale;
@@ -312,6 +360,10 @@ section.portfolio {
       &:nth-child(n + 2) {
         margin-top: 4vmin * $scale;
       }
+    }
+    .portfolio-item.desc {
+      height: auto;
+      min-height: 67vmin * $scale;
     }
   }
 }

@@ -88,7 +88,7 @@ export default {
           previewImage: '预览图片',
           codeUrl: '源码链接',
           previewQRCode: '源码二维码地址',
-          tags: ['TypeScript', 'Canvas', 'MVC', 'Webpack', 'tag'],
+          tags: ['TypeScript', 'Canvas', 'MVC', 'Webpack'],
           description: `
           项目为一个微型游戏盒，目前已基本实现的小游戏有魔塔和flappy bird。
           项目是初步看完TypeScript文档后，实现的第一个TS项目，由webpack配合ts-loader搭建的ts开发环境。
@@ -238,7 +238,8 @@ section.portfolio {
 
   .portfolio-item.desc {
     position: relative;
-    transition: transform 0.6s;
+    transition-duration: .6s;
+    transition-property: transform box-shaodw;
     transform: rotateY(180deg);
     .portfolio-info {
       display: none;

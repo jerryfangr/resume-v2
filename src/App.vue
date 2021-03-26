@@ -21,24 +21,28 @@
     <portfolio-section></portfolio-section>
     <!-- portfolio end -->
 
-    <!-- portfolio start -->
-    <title-section>其他</title-section>
-    <!-- portfolio end -->
+    <!-- other start -->
+    <!-- <title-section>其他</title-section> -->
+    <!-- other end -->
 
-    <!-- portfolio start -->
+    <!-- message board start -->
     <title-section>留言</title-section>
-    <!-- portfolio end -->
+    <message-section></message-section>
+    <!-- message board end -->
   </div>
 </template>
 
 <script>
+// common
 import 'animate.css';
 import './assets/ali-icon';
+// components
 import navBar from './components/nav-bar/nav-bar';
 import titleSection from './components/title-section/title-section';
 import mainSection from './components/main-section/main-section';
 import skillSection from './components/skill-section/skill-section';
 import portfolioSection from './components/portfolio-section/portfolio-section';
+import messageSection from './components/message-section/message-section';
 
 export default {
   name: 'App',
@@ -47,7 +51,8 @@ export default {
     titleSection,
     mainSection,
     skillSection,
-    portfolioSection
+    portfolioSection,
+    messageSection,
   }
 }
 </script>

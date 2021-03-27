@@ -1,12 +1,28 @@
 <template>
-  <section class="title">
+  <section class="title" ref="title">
     <h2 class="text"><slot></slot></h2>
   </section>
 </template>
 
 <script>
-export default {
+import VueScrollTo from 'vue-scrollto';
 
+export default {
+  methods: {
+    scrollToHere() {
+      return new Promise((resove, reject) => {
+        this.$scrollTo(this.$refs.title, 1000, {
+          easing: 'ease-in-out',
+          onDone: function(element) {
+            resove('done');
+          },
+          onCancel: function() {
+            resove('cancel');
+          },
+        });
+      });
+    }
+  }
 }
 </script>
 

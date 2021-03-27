@@ -173,7 +173,7 @@ export default {
 
 <style lang="scss" scoped>
   section.message {
-    padding-bottom: 5vmin;
+    padding-bottom: 15vmin;
     .message-form {
       background-color: #fff;
       padding: 1.5vmin 2vmin 1vmin 2vmin;

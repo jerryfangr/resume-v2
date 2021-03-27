@@ -4,12 +4,14 @@
       <ul class="dock-icons" @mouseleave="clearIcon">
         <li
           class="section-icon"
+          v-for="(name, index) in sectionNames"
+          :key="index"
           @mousemove="activeIcon($event, index)"
           @click="scrollTo($event, index)"
           ref="section"
         >
           <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-main"></use>
+            <use :xlink:href="'#icon-' + name"></use>
           </svg>
         </li>
       </ul>
@@ -19,31 +21,34 @@
 
 <script>
 export default {
+  props: {
+    scrollToComponent: Function,
+    sectionNames: Array
+  },
   data() {
     return {
-      sections: ['😃', '😊', '😜', '😍', '🤩', '🥳', '🥶'],
       current: -999
     };
   },
 
   methods: {
     activeIcon(e, index) {
-      this.current = index;
-      const item = e.target;
-      const itemRect = item.getBoundingClientRect();
-      const offset = Math.abs(e.clientX - itemRect.left) / itemRect.width;
+      // this.current = index;
+      // const item = e.target;
+      // const itemRect = item.getBoundingClientRect();
+      // const offset = Math.abs(e.clientX - itemRect.left) / itemRect.width;
       
-      const prev = item.previousElementSibling || null
-      const next = item.nextElementSibling || null
-      const defaultScale = 0.4;
+      // const prev = item.previousElementSibling || null
+      // const next = item.nextElementSibling || null
+      // const defaultScale = 0.4;
       
-      if (prev) {
-        prev.style.transform = `scale(${1 + defaultScale * Math.abs(offset - 1)}`;
-      }
-      item.style.transform = `scale(${1 + defaultScale * Math.abs(1 + defaultScale)}`;
-      if (next) {
-        next.style.transform = `scale(${1 + defaultScale * offset}`;
-      }
+      // if (prev) {
+      //   prev.style.transform = `scale(${1 + defaultScale * Math.abs(offset - 1)}`;
+      // }
+      // item.style.transform = `scale(${1 + defaultScale * Math.abs(1 + defaultScale)}`;
+      // if (next) {
+      //   next.style.transform = `scale(${1 + defaultScale * offset}`;
+      // }
     },
 
     clearIcon() {
@@ -61,8 +66,12 @@ export default {
     },
 
     scrollTo(e, index) {
-      e.target.classList.add('loading');
-      // const section = this.sections[index];
+      console.log('add');
+      const target = e.currentTarget;
+      target.classList.add('loading');
+      this.scrollToComponent(index).then(() => {
+        target.classList.remove('loading');
+      });
     }
   },
 };
@@ -93,12 +102,15 @@ nav.dock {
       }
 
       .section-icon {
-        margin: 0 .2vmin;
+        &:nth-child(n+2) {
+          margin-left: 2vmin;
+        }
         font-size: 7vmin;
         text-align: center;
-        transition: transform .1s;
+        transition: all .1s;
         &:hover {
-          cursor: default;
+          cursor: pointer;
+          font-size: 9vmin;
         }
       }
 

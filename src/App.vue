@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <!-- <nav-bar></nav-bar> -->
+    <nav-bar :scrollToComponent = "scrollToComponent" :sectionNames="sectionNames"></nav-bar>
 
     <!-- user info start -->
-    <title-section>介绍</title-section>
+    <title-section ref="titleMain">介绍</title-section>
     <main-section></main-section>
     <!-- user info end -->
 
@@ -12,12 +12,12 @@
     </section>
     
     <!-- skill start -->
-    <title-section>技能</title-section>
+    <title-section ref="titleSkill">技能</title-section>
     <skill-section></skill-section>
     <!-- skill end -->
 
     <!-- portfolio start -->
-    <title-section>作品</title-section>
+    <title-section ref="titlePortfolio">作品</title-section>
     <portfolio-section></portfolio-section>
     <!-- portfolio end -->
 
@@ -26,7 +26,7 @@
     <!-- other end -->
 
     <!-- message board start -->
-    <title-section>留言</title-section>
+    <title-section ref="titleMessage">留言</title-section>
     <message-section></message-section>
     <!-- message board end -->
   </div>
@@ -46,6 +46,7 @@ import messageSection from './components/message-section/message-section';
 
 export default {
   name: 'App',
+
   components: {
     navBar,
     titleSection,
@@ -53,7 +54,30 @@ export default {
     skillSection,
     portfolioSection,
     messageSection,
+  },
+
+  mounted() {
+    this.sectionAnchor = [
+      this.$refs.titleMain, 
+      this.$refs.titleSkill, 
+      this.$refs.titlePortfolio, 
+      this.$refs.titleMessage, 
+    ]
+  },
+
+  data() {
+    return {
+      sectionNames: ['main', 'skill', 'portfolio', 'message'],
+      sectionAnchor: [],
+    }
+  },
+
+  methods: {
+    scrollToComponent(index) {
+      return this.sectionAnchor[index].scrollToHere();
+    }
   }
+
 }
 </script>
 

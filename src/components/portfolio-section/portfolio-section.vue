@@ -146,25 +146,10 @@ export default {
 
   beforeMount() {
     this.portfolios.forEach((portfolio, index) => {
-      portfolio.description = this.wordWrapFormat(portfolio.description);
+      portfolio.description = this.$_resumeUtil.textToList(portfolio.description);
       this.$set(portfolio, 'showQrCode', false);
       this.$set(portfolio, 'showDesc', false);
     });
-  },
-
-  methods: {
-    wordWrapFormat(text) {
-      let newTexts = [];
-      text.match(/.*\n/gi)?.forEach((content) => {
-        const emptyRegExp = /^[\n ]{1,}$/gi;
-        if (!emptyRegExp.test(content)) {
-          content = content.replace(/\n/gi, '');
-          content = content.replace(/^[ ]{1,}/gi, '');
-          newTexts.push(content);
-        }
-      });
-      return newTexts;
-    },
   },
 };
 </script>
@@ -289,7 +274,8 @@ section.portfolio {
       width: 43vmin * $scale;
       height: 67vmin * $scale;
       padding: 4vmin * $scale;
-      border-radius: 3vmin * $scale;
+      border-radius: 1vmin * $scale;
+      margin-bottom: 4vmin * $scale;
       .image {
         width: 35vmin * $scale;
         height: 35vmin * $scale;
@@ -339,28 +325,21 @@ section.portfolio {
     }
   }
 
-  @media screen and (min-width: 550px) {
+  @media screen and (min-width: 560px) {
     $scale: 1;
     @include item-size($scale);
     .portfolio-item {
-      &:nth-child(n + 3) {
-        margin-top: 4vmin * $scale;
-      }
-
       &:nth-child(2n) {
-        margin-left: 5vmin * $scale;
+        margin-left: 3vmin * $scale;
       }
     }
   }
 
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 560px) {
     $scale: 1.7;
     @include item-size($scale);
     .portfolio-item {
       text-align: center;
-      &:nth-child(n + 2) {
-        margin-top: 4vmin * $scale;
-      }
     }
     .portfolio-item.desc {
       height: auto;

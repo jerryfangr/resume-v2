@@ -3,14 +3,14 @@
     <div class="container">
       <ul class="dock-icons" @mouseleave="clearIcon">
         <li
-          v-for="(section, index) in sections"
-          :key="section"
           class="section-icon"
           @mousemove="activeIcon($event, index)"
           @click="scrollTo($event, index)"
           ref="section"
         >
-          {{ section }}
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-main"></use>
+          </svg>
         </li>
       </ul>
     </div>

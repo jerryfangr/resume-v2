@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav-bar></nav-bar>
+    <!-- <nav-bar></nav-bar> -->
 
     <!-- user info start -->
     <title-section>介绍</title-section>

@@ -6,6 +6,7 @@ li,
 a,
 button,
 input,
+textarea,
 form,
 img,
 body,
@@ -14,6 +15,7 @@ html {
   padding: 0;
   border: none;
   box-sizing: border-box;
+  border: none;
 }
 
 a {
@@ -30,4 +32,14 @@ button {
 section {
   display: block;
   box-sizing: border-box;
+}
+
+input,
+textarea {
+  background: none;
+  outline: none;
+  &:focus {
+    background: none;
+    border: none;
+  }
 }

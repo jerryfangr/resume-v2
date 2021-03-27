@@ -74,7 +74,7 @@
         >
           <div class="wrapper">
             <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-blogging"></use>
+              <use xlink:href="#icon-blog"></use>
             </svg>
           </div>
         </a>

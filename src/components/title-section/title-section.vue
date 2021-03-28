@@ -11,7 +11,7 @@ export default {
   methods: {
     scrollToHere() {
       return new Promise((resove, reject) => {
-        this.$scrollTo(this.$refs.title, 1000, {
+        VueScrollTo.scrollTo(this.$refs.title, 1000, {
           easing: 'ease-in-out',
           onDone: function(element) {
             resove('done');

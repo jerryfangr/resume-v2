@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav-bar :scrollToComponent = "scrollToComponent" :sectionNames="sectionNames"></nav-bar>
+    <nav-bar :scrollToComponent="scrollToComponent" :sectionNames="sectionNames"></nav-bar>
 
     <!-- user info start -->
     <title-section ref="titleMain">介绍</title-section>

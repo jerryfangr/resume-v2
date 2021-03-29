@@ -100,20 +100,13 @@
 import imageAvatar from '@/assets/avatar.png';
 
 export default {
+  props: {
+    user: Object
+  },
   data() {
     return {
       timer: 0,
       avatar: imageAvatar,
-      user: {
-        name: '方涵聪',
-        age: '23',
-        work: '前端',
-        gender: '男',
-        mail: 'xdxtf@qq.com',
-        school: '上海杉达学院',
-        blog: 'https://jerryfangr.github.io',
-        github: 'https://github.com/jerryfangr',
-      },
     };
   },
 

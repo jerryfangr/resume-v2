@@ -4,7 +4,7 @@
 
     <!-- user info start -->
     <title-section ref="titleMain">介绍</title-section>
-    <main-section></main-section>
+    <main-section :user="sectionData.user"></main-section>
     <!-- user info end -->
 
     <section class="download">
@@ -13,12 +13,12 @@
     
     <!-- skill start -->
     <title-section ref="titleSkill">技能</title-section>
-    <skill-section></skill-section>
+    <skill-section :skills="sectionData.skills"></skill-section>
     <!-- skill end -->
 
     <!-- portfolio start -->
     <title-section ref="titlePortfolio">作品</title-section>
-    <portfolio-section></portfolio-section>
+    <portfolio-section :portfolios="sectionData.portfolios"></portfolio-section>
     <!-- portfolio end -->
 
     <!-- other start -->
@@ -43,6 +43,10 @@ import mainSection from './components/main-section/main-section';
 import skillSection from './components/skill-section/skill-section';
 import portfolioSection from './components/portfolio-section/portfolio-section';
 import messageSection from './components/message-section/message-section';
+// personal info
+import resumeInfo from './assets/resume-info.json';
+
+console.log(resumeInfo);
 
 export default {
   name: 'App',
@@ -69,6 +73,7 @@ export default {
     return {
       sectionNames: ['main', 'skill', 'portfolio', 'message'],
       sectionAnchor: [],
+      sectionData: resumeInfo
     }
   },
 

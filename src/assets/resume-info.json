@@ -1,0 +1,91 @@
+{
+  "user": {
+    "name": "方涵聪",
+    "age": "23",
+    "work": "前端",
+    "gender": "男",
+    "mail": "xdxtf@qq.com",
+    "school": "上海杉达学院",
+    "blog": "https://jerryfangr.github.io",
+    "github": "https://github.com/jerryfangr"
+  },
+  "skills": [
+    {
+      "title": "HTML & CSS",
+      "level": "★★★★★",
+      "description": "熟悉 HTML5与标签语义化 nav、header、main、section、footer等。\n熟悉 css 预处理 sass、less，css3 动画、过度效果、flex盒子、媒体查询等。\n能独立根据设计稿实现网页布局与样式制作。"
+    },
+    {
+      "title": "JavaScript",
+      "level": "★★★★★",
+      "description": "熟悉 JavaScript基础语法与特性，如作用域、闭包、原型、原型链、异步等。\n熟悉 dom与bom常见api、ajax。\n熟悉 es6、es7等新语法与新特性，如promise(async)、generator、class、解构等。"
+    },
+    {
+      "title": "TypeScript",
+      "level": "★★★★",
+      "description": "熟悉 TypeScript扩展语法与特性，如元组、Void、Never、泛型、断言。\n熟悉 面向对象的继承、封装(private、protect、public)、多态(接口，抽象类)。\n能使用纯TypeScript开发网页应用。"
+    },
+    {
+      "title": "Vue",
+      "level": "★★★★",
+      "description": "熟悉 vue基础语法与特性，如生命周期、模板语法、组件通信、计算属性、过滤器等。\n熟悉 vue拓展生态 vue-router和vuex，熟练使用vue-cli脚手架开发应用。\n了解 vue3 部分新特性 如Proxy来代理数据、Composition API、Fragments等"
+    },
+    {
+      "title": "小程序",
+      "level": "★★★★",
+      "description": "熟悉 微信小程序原生语法与云开发(函数、数据库、存储)。\n熟悉 微信小程序特点 如：dom api缺失、导航栏配置、page、组件通信、监听等。\n熟悉 uniapp框架下通过vue语法开发小程序，能熟练使用flex布局。"
+    },
+    {
+      "title": "移动端",
+      "level": "★★★★",
+      "description": "熟悉 移动端适配样式的方式，如 rem、vw/vh/vmin/vmax、媒体查询等。\n熟悉 手机端特殊的dom api，如 touch 相关操作，真机vconsole调试。\n熟悉 手机端事件，如滑动、长按。"
+    },
+    {
+      "title": "工具",
+      "level": "★★★★",
+      "description": "熟悉 webpack打包工具与常见loader与插件的配置。\n熟悉 常见配置 如babel、corejs、postcss、less/sass、css、style等。\n熟悉 commonjs和es6 module规范。"
+    }
+  ],
+  "portfolios": [
+    {
+      "title": "麦趣游戏盒",
+      "previewUrl": "https://z3.ax1x.com/2021/03/29/c9AFr8.jpg",
+      "codeUrl": "https://github.com/jerryfangr/game-box",
+      "qRCodeUrl": "https://z3.ax1x.com/2021/03/25/6qzxYR.png",
+      "tags": ["TypeScript", "Canvas", "MVC", "Webpack"],
+      "description": "项目为一个微型游戏盒，目前已基本实现的小游戏有魔塔和flappy bird。\n项目是初步看完TypeScript文档后，实现的第一个TS项目，由webpack配合ts-loader搭建的ts开发环境。\n项目主要把 canvas2D 的图片、文字、画笔、矩形的api和键盘输入的事件监听，封装成了一个简陋的小引擎(单例模式)，并由此开发游戏。\n页面部分，采取MVC的方式拆分管理网页各部分，以及相应的事件监听与数据更新。"
+    },
+    {
+      "title": "小小音乐(手机端)",
+      "previewUrl": "预览图片",
+      "codeUrl": "源码链接",
+      "qRCodeUrl": "源码二维码地址",
+      "tags": ["JavaScript", "Axios", "MVC", "Webpack", "NodeJs", "Express"],
+      "description": ""
+    },
+    {
+      "title": "在线简历",
+      "previewUrl": "预览图片",
+      "codeUrl": "源码链接",
+      "qRCodeUrl": "源码二维码地址",
+      "tags": ["JavaScript", "Vue", "Sass", "Vue-cli"],
+      "description": "一个自适应屏幕的在线简历，包含个人背景、技术栈、作品集、留言板。\n网页样式是拾人牙慧，根据多个dribbble免费模板，重新设计而来。\n项目用vue-cli & sass 搭建开发环境，每一个信息块都为设计为单独组件。\n网页的要渲染的个人信息统一存放到了单独的json文件，便于未来替换在线api的需求。\n留言板使用了 leancloud api存放留言信息。"
+    },
+    {
+      "title": "Gamer聊天室",
+      "previewUrl": "预览图片",
+      "codeUrl": "源码链接",
+      "qRCodeUrl": "源码二维码地址",
+      "tags": ["Vue", "Vue-router", "Vuex", "Socket.io", "NodeJs", "Express"],
+      "description": ""
+    },
+    {
+      "title": "箱",
+      "previewUrl": "预览图片",
+      "codeUrl": "源码链接",
+      "qRCodeUrl": "源码二维码地址",
+      "tags": ["微信小程序", "云开发", "uniapp", "Vue"],
+      "description": ""
+    }
+  ]
+}

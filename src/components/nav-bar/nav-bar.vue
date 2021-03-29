@@ -25,6 +25,7 @@ export default {
     scrollToComponent: Function,
     sectionNames: Array
   },
+  
   data() {
     return {
       current: -999

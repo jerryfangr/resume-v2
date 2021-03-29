@@ -110,11 +110,12 @@ export default {
 
 <style lang="scss" scoped>
 section.portfolio {
-  text-align: left;
+  text-align: center;
 
   .portfolio-item {
     display: inline-block;
     vertical-align: top;
+    text-align: left;
     width: 50vmin;
     max-width: 50%;
     margin-bottom: 4vmin;
@@ -168,15 +169,13 @@ section.portfolio {
           padding: 1vmin 1.3vmin;
           font-weight: 600;
           transition: all .3s;
-          // border: 1px solid #022444;
-          // color: #022444;
           border: 2px solid #e3ebf3;
-          color: #eff3f7;
+          color: #e3ebf3;
           
           &:hover {
             box-shadow: 0 0 .5vmin 0 #264472;
-            // color: #dbe6f1;
             border-color: #73b7f7;
+            color: #73b7f7;
           }
         }
       }
@@ -271,7 +270,6 @@ section.portfolio {
   }
 
   @media screen and (min-width: 560px) {
-    $scale: 1;
     .portfolio-item {
       &:nth-child(2n) {
         text-align: right;
@@ -280,7 +278,83 @@ section.portfolio {
   }
 
   @media screen and (max-width: 560px) {
+    $scale: 2.06;
+    .portfolio-item {
+      width: 99vmin;
+      max-width: 99%;
+      .container {
+        width: 100%;
+        height: 47vmin * $scale;
+        margin-bottom: 4vmin;
+
+        .bottom-btn {
+          padding: 2.2vmin * $scale 0;
+          font-size: 2.3vmin * $scale;
+        }
+
+        .portfolio-info.image {
+          height: 25.5vmin * $scale;
+
+          .desc-button {
+            font-size: 1.7vmin * $scale;
+            padding: 1vmin * $scale 1.3vmin * $scale;
+            transition: all .3s;
+            border: 3px solid #e3ebf3;
+            &:hover {
+              box-shadow: 0 0 .5vmin * $scale 0 #264472;
+            }
+          }
+        }
+
+        .portfolio-info.title {
+          padding: 3vmin * $scale;
+          font-size: 2.3vmin * $scale;
+        }
+
+        .portfolio-info.code-link {
+          padding: 0 3vmin * $scale 2vmin * $scale 3vmin * $scale;
+          font-size: 1.85vmin * $scale;
+        }
+        .portfolio-info.qr-button {
+          border-top: 2px * $scale solid #f0f0f3;
+        }
+      }
+    }
+
     .portfolio-item.desc {
+      .container {
+        min-height: 47vmin * $scale;
+        padding: 1vmin * $scale 2vmin * $scale;
+        padding-bottom: 10vmin * $scale;
+
+        .portfolio-info.back-button {
+          border-top: 2px * $scale solid #f0f0f3;
+        }
+    
+        .description {
+          text-indent: 2em;
+          font-size: 1.9vmin * $scale;
+          .text:nth-child(n + 2) {
+            margin-top: 1.5vmin * $scale;
+          }
+    
+          .tags .tag-item {
+            font-size: 1.8vmin * $scale;
+            margin-bottom: 5px * $scale;
+            margin-right: 3px * $scale;
+            box-shadow: 0 0 .2vmin * $scale 0 rgba(0, 0, 0, .4);
+            text-shadow: 0 0 .2vmin * $scale 0 #fff;
+            padding: 0.4vmin * $scale 0.8vmin * $scale 0.4vmin * $scale 2.2vmin * $scale;
+
+            &::before {
+              box-shadow: 0 0 0.2vmin * $scale 0.15vmin * $scale rgba(0, 0, 0, .3);
+              left: 1vmin * $scale;
+              width: 0.5vmin * $scale;
+              height: 0.5vmin * $scale;
+            }
+          }
+        }
+      }
     }
   }
 

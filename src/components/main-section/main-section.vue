@@ -377,8 +377,6 @@ section.main {
       }
 
       .main-part.about {
-        background-color: #f00;
-
         .message-box.name {
           top: 2vmin;
           left: 2vmin;
@@ -412,7 +410,6 @@ section.main {
       }
 
       .main-part.avatar {
-        background-color: #0f0;
         .bubble-center {
           display: block;
           top: 4.7vmin;
@@ -431,8 +428,6 @@ section.main {
       }
 
       .main-part.more {
-        background-color: #00f;
-
         .message-box.tip {
           display: none;
         }

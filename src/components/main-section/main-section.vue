@@ -163,14 +163,12 @@ export default {
 /* layout */
 section.main {
   position: relative;
+
   .container {
     height: 100%;
     width: 100%;
     border-radius: 0.2vmin;
     overflow: hidden;
-    .main-part {
-      position: relative;
-    }
   }
 }
 
@@ -179,6 +177,7 @@ section.main {
   .container {
     background: #edf2f8;
     box-shadow: 0 0 3vmin 0.1vmin #ccd1d8;
+
     .message-box {
       display: inline-block;
       position: absolute;
@@ -190,9 +189,11 @@ section.main {
       font-size: 1.5vmin;
       font-weight: 600;
       color: #3d4451;
+
       .title {
         color: #bbb;
       }
+
       .content {
         margin-top: 3px;
         font-size: 3vmin;
@@ -226,11 +227,12 @@ section.main {
   }
 }
 
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 500px) {
   section.main {
     height: 63vmin;
     .container {
       .main-part {
+        position: relative;
         height: 100%;
         float: left;
       }
@@ -240,7 +242,7 @@ section.main {
         transition: all 0.5s;
       }
 
-      .about {
+      .main-part.about {
         width: 28.4%;
         .bubble-top {
           top: 60%;
@@ -286,7 +288,7 @@ section.main {
         }
       }
 
-      .avatar {
+      .main-part.avatar {
         width: 44.4%;
         .bubble-center {
           top: 4.7vmin;
@@ -302,7 +304,7 @@ section.main {
         }
       }
 
-      .more {
+      .main-part.more {
         width: 27.2%;
 
         .message-box.tip {
@@ -357,4 +359,105 @@ section.main {
     }
   }
 }
+
+@media screen and (max-width: 500px) {
+  section.main {
+    height: 80vmin;
+    .container {
+      .bubble {
+        display: none;
+      }
+
+      .message-box {
+        font-size: 1.3vmin;
+        .content {
+          font-size: 4.5vmin;
+          margin-left: 6vmin;
+        }
+      }
+
+      .main-part.about {
+        background-color: #f00;
+
+        .message-box.name {
+          top: 2vmin;
+          left: 2vmin;
+        }
+
+        .message-box.school {
+          top: 18vmin;
+          left: 2vmin;
+        }
+
+        .message-box.age {
+          top: 28vmin;
+          left: 13vmin;
+        }
+
+        .message-box.gender {
+          top: 37vmin;
+          left: 2vmin;
+        }
+
+        .message-box.work {
+          top: 37vmin;
+          right: 2vmin;
+        }
+
+        .message-box.mail {
+          bottom: 0.2vmin;
+          left: 27vmin;
+          cursor: pointer;
+        }
+      }
+
+      .main-part.avatar {
+        background-color: #0f0;
+        .bubble-center {
+          display: block;
+          top: 4.7vmin;
+          left: -2.3vmin;
+          @include bubble(70vmin, 0s, no);
+          @include abs-layout(center);
+          transition: all 0.5s;
+          overflow: hidden;
+          .image {
+            width: 95%;
+            height: auto;
+            @include abs-layout(center);
+            z-index: 1;
+          }
+        }
+      }
+
+      .main-part.more {
+        background-color: #00f;
+
+        .message-box.tip {
+          display: none;
+        }
+
+        .circle-link {
+          position: absolute;
+          bottom: 3%;
+          .wrapper {
+            width: 12vmin;
+            height: 12vmin;
+            font-size: 8vmin;
+            color: #313e55;
+          }
+
+          &.github {
+            left: 3%;
+          }
+
+          &.blog {
+            right: 3%;
+          }
+        }
+      }
+    }
+  }
+}
+
 </style>

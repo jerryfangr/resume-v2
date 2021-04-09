@@ -56,18 +56,18 @@
       "description": "项目为一个微型游戏盒，目前已基本实现的小游戏有魔塔和flappy bird。\n项目是初步看完TypeScript文档后，实现的第一个TS项目，由webpack配合ts-loader搭建的ts开发环境。\n项目主要把 canvas2D 的图片、文字、画笔、矩形的api和键盘输入的事件监听，封装成了一个简陋的小引擎(单例模式)，并由此开发游戏。\n页面部分，采取MVC的方式拆分管理网页各部分，以及相应的事件监听与数据更新。"
     },
     {
-      "title": "小小音乐(手机端)",
-      "previewUrl": "预览图片",
-      "codeUrl": "源码链接",
-      "qRCodeUrl": "源码二维码地址",
+      "title": "小小音乐云",
+      "previewUrl": "https://z3.ax1x.com/2021/04/23/cjemDI.jpg",
+      "codeUrl": "https://github.com/jerryfangr/simple-music-server",
+      "qRCodeUrl": "https://z3.ax1x.com/2021/04/23/cjeEgH.png",
       "tags": ["JavaScript", "Axios", "MVC", "Webpack", "NodeJs", "Express"],
-      "description": ""
+      "description": "一个音乐的数据服务器，支持文件上传和音乐表单的增删改查。\n服务器借助express框架快速搭建，api设计基本参照RESTful规范。\n数据库为对JSON文件的操作的简易封装。\n网页有webpack配置开发环境，采用MVC结构，最终打包文件放置express服务器下的静态文件夹。"
     },
     {
       "title": "在线简历",
-      "previewUrl": "预览图片",
-      "codeUrl": "源码链接",
-      "qRCodeUrl": "源码二维码地址",
+      "previewUrl": "https://z3.ax1x.com/2021/04/24/cjmokV.jpg",
+      "codeUrl": "https://github.com/jerryfangr/resume-v2",
+      "qRCodeUrl": "https://z3.ax1x.com/2021/04/24/cjmTYT.png",
       "tags": ["JavaScript", "Vue", "Sass", "Vue-cli"],
       "description": "一个自适应屏幕的在线简历，包含个人背景、技术栈、作品集、留言板。\n网页样式是拾人牙慧，根据多个dribbble免费模板，重新设计而来。\n项目用vue-cli & sass 搭建开发环境，每一个信息块都为设计为单独组件。\n网页的要渲染的个人信息统一存放到了单独的json文件，便于未来替换在线api的需求。\n留言板使用了 leancloud api存放留言信息。"
     },
@@ -76,8 +76,8 @@
       "previewUrl": "预览图片",
       "codeUrl": "源码链接",
       "qRCodeUrl": "源码二维码地址",
-      "tags": ["Vue", "Vue-router", "Vuex", "Socket.io", "NodeJs", "Express"],
-      "description": ""
+      "tags": ["Vue", "Vue-router", "Vuex", "TypeScript","Sass", "Socket.io", "NodeJs", "Express"],
+      "description": "一个在线匿名聊天应用，支持群聊和私聊，未读消息提示，消息缓存。\n服务器借助express框架快速搭建响应常规Http请求，Socket.io构建websocket服务端，双方通过express-session中间件共享session。\n网页端环境通过vue-cli构建环境，typescript为主要开发语言，Vuex共享用户信息，localstorage存放聊天记录。"
     },
     {
       "title": "箱",

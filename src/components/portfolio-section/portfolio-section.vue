@@ -15,7 +15,7 @@
           />
           <transition name="slide-appear">
             <img
-              v-if="portfolio.showQrCode"
+              v-show="portfolio.showQrCode"
               class="qrcode"
               :src="portfolio.qRCodeUrl"
               key="qrcode"
@@ -121,6 +121,7 @@ section.portfolio {
     margin-bottom: 4vmin;
 
     .container {
+      text-align: left;
       display: inline-block;
       background-color: #f9f9f9;
       width: 48vmin;
@@ -169,8 +170,8 @@ section.portfolio {
           padding: 1vmin 1.3vmin;
           font-weight: 600;
           transition: all .3s;
-          border: 2px solid #e3ebf3;
-          color: #e3ebf3;
+          border: 2px solid #a8c1e6;
+          color: #a8c1e6;
           
           &:hover {
             box-shadow: 0 0 .5vmin 0 #264472;
@@ -299,7 +300,7 @@ section.portfolio {
             font-size: 1.7vmin * $scale;
             padding: 1vmin * $scale 1.3vmin * $scale;
             transition: all .3s;
-            border: 3px solid #e3ebf3;
+            border-width: 3px;
             &:hover {
               box-shadow: 0 0 .5vmin * $scale 0 #264472;
             }

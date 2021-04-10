@@ -65,7 +65,7 @@
     },
     {
       "title": "在线简历",
-      "previewUrl": "https://z3.ax1x.com/2021/04/24/cjmokV.jpg",
+      "previewUrl": "https://z3.ax1x.com/2021/04/24/cjnQ1g.jpg",
       "codeUrl": "https://github.com/jerryfangr/resume-v2",
       "qRCodeUrl": "https://z3.ax1x.com/2021/04/24/cjmTYT.png",
       "tags": ["JavaScript", "Vue", "Sass", "Vue-cli"],
@@ -73,17 +73,17 @@
     },
     {
       "title": "Gamer聊天室",
-      "previewUrl": "预览图片",
-      "codeUrl": "源码链接",
-      "qRCodeUrl": "源码二维码地址",
+      "previewUrl": "https://z3.ax1x.com/2021/04/24/cjmv01.jpg",
+      "codeUrl": "https://github.com/jerryfangr/simple-chatapp",
+      "qRCodeUrl": "https://z3.ax1x.com/2021/04/24/cjnEnA.png",
       "tags": ["Vue", "Vue-router", "Vuex", "TypeScript","Sass", "Socket.io", "NodeJs", "Express"],
       "description": "一个在线匿名聊天应用，支持群聊和私聊，未读消息提示，消息缓存。\n服务器借助express框架快速搭建响应常规Http请求，Socket.io构建websocket服务端，双方通过express-session中间件共享session。\n网页端环境通过vue-cli构建环境，typescript为主要开发语言，Vuex共享用户信息，localstorage存放聊天记录。"
     },
     {
       "title": "箱",
-      "previewUrl": "预览图片",
-      "codeUrl": "源码链接",
-      "qRCodeUrl": "源码二维码地址",
+      "previewUrl": "#",
+      "codeUrl": "#",
+      "qRCodeUrl": "#",
       "tags": ["微信小程序", "云开发", "uniapp", "Vue"],
       "description": ""
     }

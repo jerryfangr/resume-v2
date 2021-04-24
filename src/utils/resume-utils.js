@@ -3,7 +3,7 @@
  */
 const ResumeUtils = {
   /**
-   * split text by newline symbol
+   * split text by newline symbol(\n)
    * @param {string} text 
    * @returns Array
    */

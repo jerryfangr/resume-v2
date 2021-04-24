@@ -82,7 +82,7 @@ export default {
     this.$AV = AV;
     this.$Message = AV.Object.extend(this.dbName);
 
-    // temp validation (not important)
+    // temp validation (it's not important)
     if (localStorage.cdscxsedfegrddfuser === 'me123456-skachaskjckobhfciawuobcui') {
       this.isAdmin = true;
     }

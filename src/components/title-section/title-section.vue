@@ -9,6 +9,9 @@ import VueScrollTo from 'vue-scrollto';
 
 export default {
   methods: {
+    /**
+     * * scroll to this component's title localtion
+     */
     scrollToHere() {
       return new Promise((resove, reject) => {
         VueScrollTo.scrollTo(this.$refs.title, 1000, {

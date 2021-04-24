@@ -94,8 +94,7 @@ export default {
   },
 
   data() {
-    return {
-    };
+    return {};
   },
 
   beforeMount() {

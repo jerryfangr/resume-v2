@@ -34,7 +34,7 @@ export default {
 
   methods: {
     /**
-     * TODO: move and scale icon 
+     * TODO: hover animation(scale icon), The closer the distance, the bigger the icon
      */
     activeIcon(e, index) {
       // this.current = index;
@@ -66,7 +66,7 @@ export default {
     },
 
     /**
-     * check is Sibling element
+     * * check is Sibling element
      */
     isSibling(index) {
       if (index === this.current - 1 || index === this.current + 1) {
@@ -140,8 +140,5 @@ nav.dock {
   60% {
     transform: translateY(-22%);
   }
-}
-
-@media screen and (min-width: 800px) {
 }
 </style>

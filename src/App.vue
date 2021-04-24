@@ -78,6 +78,9 @@ export default {
   },
 
   methods: {
+    /**
+     * * scroll to component title
+     */
     scrollToComponent(index) {
       return this.sectionAnchor[index].scrollToHere();
     }

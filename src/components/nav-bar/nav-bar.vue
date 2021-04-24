@@ -33,6 +33,9 @@ export default {
   },
 
   methods: {
+    /**
+     * TODO: move and scale icon 
+     */
     activeIcon(e, index) {
       // this.current = index;
       // const item = e.target;
@@ -52,6 +55,9 @@ export default {
       // }
     },
 
+    /**
+     * * clear style
+     */
     clearIcon() {
       this.current = -999;
       this.$refs.section?.forEach(ele => {
@@ -59,6 +65,9 @@ export default {
       })
     },
 
+    /**
+     * check is Sibling element
+     */
     isSibling(index) {
       if (index === this.current - 1 || index === this.current + 1) {
         return true;
@@ -66,8 +75,10 @@ export default {
       return false;
     },
 
+    /**
+     * * add scroll animation
+     */
     scrollTo(e, index) {
-      console.log('add');
       const target = e.currentTarget;
       target.classList.add('loading');
       this.scrollToComponent(index).then(() => {

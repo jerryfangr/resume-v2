@@ -61,7 +61,7 @@
       "codeUrl": "https://github.com/jerryfangr/simple-music-server",
       "qRCodeUrl": "https://z3.ax1x.com/2021/04/23/cjeEgH.png",
       "tags": ["JavaScript", "Axios", "MVC", "Webpack", "NodeJs", "Express"],
-      "description": "一个音乐的数据服务器，支持文件上传和音乐表单的增删改查。\n服务器借助express框架快速搭建，api设计基本参照RESTful规范。\n数据库为对JSON文件的操作的简易封装。\n网页有webpack配置开发环境，采用MVC结构，最终打包文件放置express服务器下的静态文件夹。"
+      "description": "一个音乐的数据服务器，支持文件上传和音乐表单的增删改查。\n服务器借助express框架快速搭建，api设计基本参照RESTful规范。\n数据库为对JSON文件的操作的简易封装。\n网页通过webpack配置开发环境，采用MVC结构，最终打包文件放置express服务器下的静态文件夹。"
     },
     {
       "title": "在线简历",

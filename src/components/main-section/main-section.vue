@@ -345,7 +345,7 @@ section.main {
               font-size: 8vmin;
             }
 
-            top: 31vmin;
+            top: 32vmin;
             left: 6vmin;
           }
         }

@@ -8,7 +8,7 @@
     <!-- user info end -->
 
     <section class="download">
-      <a href="/方涵聪-应聘前端-2021.pdf" download>下载 PDF 简历</a>
+      <a href="./方涵聪-应聘前端-2021.pdf" download>下载 PDF 简历</a>
     </section>
     
     <!-- skill start -->

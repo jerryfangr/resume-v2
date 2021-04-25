@@ -113,15 +113,17 @@ export default {
   },
 
   methods: {
-    log(v) {
-      console.log(v);
-    },
-
+    /**
+     * * load data from leanCloud
+     */
     loadData() {
       let query = new this.$AV.Query(this.dbName);
       return query.find();
     },
 
+    /**
+     * * add data to leanCloud
+     */
     addData(data) {
       const dataObj = new this.$Message()
       for (const key in data) {
@@ -132,6 +134,9 @@ export default {
       return dataObj.save();
     },
 
+    /**
+     * * update message and sync to leanCloud
+     */
     updateData(data) {
       const dataObj = this.$AV.Object.createWithoutData(this.dbName, data.id);
       for (const key in data) {
@@ -142,17 +147,23 @@ export default {
       return dataObj.save();
     },
 
+    /**
+     * * add message to leanCloud
+     */
     addMessage(event) {
       if (!this.isSubmit && this.inputData.content.trim() !== '') {
         this.addData(this.inputData).then((data) => {
           this.messages.unshift(this.formatData(data));
+          this.inputData.title = '';
+          this.inputData.content = '';
         })
       }
     },
 
     formatData(data) {
       const self = this;
-      const message = {...data.attributes, updatedAt: data.updatedAt}
+      const updateTime = data.updatedAt.toString().replace(/ [A-Z]{2,5}\+.*/ig, '');
+      const message = {...data.attributes, updatedAt: updateTime}
       message.content = this.$_resumeUtil.textToList(message.content);
       message.id = data.id;
       message.save = function() {
@@ -161,6 +172,9 @@ export default {
       return message;
     },
 
+    /**
+     * * update message property read -> true
+     */
     readMessage(index) {
       const message = this.messages[index];
       message.read = true;
@@ -241,8 +255,9 @@ export default {
         }
 
         .message-title {
-          height: 11vmin;
+          min-height: 10vmin;
           font-size: 0;
+
           .title-item {
             display: inline-block;
             vertical-align: top;
@@ -256,9 +271,10 @@ export default {
           }
 
           .title-info {
-            width: 72vmin;
+            width: 66vmin;
             text-align: left;
             padding: 0 2vmin;
+
             .title-content {
               font-size: 3vmin;
               font-weight: 600;
@@ -272,21 +288,23 @@ export default {
           }
 
           .operation {
+            width: 20vmin;
             float: right;
             &::after {
               @include clearFix();
             }
 
             .btn {
+              width: 45%;
               padding: .8vmin 1.3vmin;
-              font-size: 1.7vmin;
+              font-size: 1.5vmin;
               border-radius: .5vmin;
               font-weight: 600;
               background-color: #e0e0e9;
               color: #0d0731;
               cursor: pointer;
               &:nth-child(n+2) {
-                margin-left: 2vmin;
+                margin-left: 10%;
               }
             }
           }

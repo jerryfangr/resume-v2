@@ -30,25 +30,25 @@ $bg-color-mask:rgba(0, 0, 0, 0.4);//遮罩颜色
   left: 50%;
   transform: translate(-50%, -50%);
 }
-@mixin abs-left($distance) {
+@mixin abs-left($distance: 0) {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: $distance;
 }
-@mixin abs-right($distance) {
+@mixin abs-right($distance: 0) {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: $distance;
 }
-@mixin abs-top($distance) {
+@mixin abs-top($distance: 0) {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   top: $distance;
 }
-@mixin abs-bottom($distance) {
+@mixin abs-bottom($distance: 0) {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);

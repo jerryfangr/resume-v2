@@ -84,18 +84,18 @@
       "previewUrl": "#",
       "codeUrl": "#",
       "qRCodeUrl": "#",
-      "tags": ["微信小程序", "云开发", "uniapp", "Vue"],
+      "tags": ["微信小程序", "云开发", "uniapp", "Vue", "sass"],
       "description": ""
     }
   ],
   "experience": [
     {
-      "time": "2017.6-2017.8",
-      "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium"
+      "title": "2017.6-2017.8 [实习]碰撞科技",
+      "description": "主要实习内容，前端的网页兼容性测试，软件技术支持(为客户提供现场的软件安装和使用指导)。"
     },
     {
-      "time": "2019.6-2019.12",
-      "description": "Proin quam velit, efficitur vel neque vitae, rhoncus commodo mi. Suspendisse finibus mauris et bibendum molestie. Aenean ex augue, varius et pulvinar in, pretium non nisi."
+      "title": "2019.6-2019.12 [实习]上海现代商友",
+      "description": "主要实习内容，基础日语培训。后端API接口，前端网页兼容等测试，主要为功能测试。协调规划组内成员的测试任务(实习生组)。前端样例demo开发(根据设计稿的功能描述与少量的素材，自行补全设计开发展示的demo)"
     }
   ]
 }

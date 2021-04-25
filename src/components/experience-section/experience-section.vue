@@ -3,7 +3,7 @@
   <ul class="timeline">
     <li class="experience-item show" v-for="(ep, index) in experience" :key="index">
       <div class="wrapper">
-        <time>{{ ep.time }}</time> 
+        <title>{{ ep.title }}</title> 
         {{ ep.description }}
       </div>
     </li>
@@ -22,9 +22,9 @@ export default {
 
 <style lang="scss" scoped>
 section.experience {
-  color: #fff;
   font: normal 16px/1.5 "Helvetica Neue", sans-serif;
-  $box-color: #f45b69;
+  color: #4a525e;
+  $box-color: #dae2ed;
 
   .timeline {
     background: #edf2f8;
@@ -66,7 +66,7 @@ section.experience {
       .wrapper {
         position: relative;
         bottom: 0;
-        width: 350px;
+        width: 360px;
         padding: 15px;
         background: $box-color;
         visibility: hidden;
@@ -82,7 +82,7 @@ section.experience {
           border-style: solid;
         }
 
-        time {
+        title {
           display: block;
           font-size: 1.2rem;
           font-weight: bold;
@@ -102,7 +102,7 @@ section.experience {
       }
 
       &:nth-child(even) .wrapper {
-        left: -390px;
+        left: -400px;
         transform: translate3d(-20px, 0, 0);
 
         &::before {
@@ -115,7 +115,7 @@ section.experience {
     }
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 920px) {
     .timeline .experience-item {
       .wrapper {
         width: calc(50vw - 100px);

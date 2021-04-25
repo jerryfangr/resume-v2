@@ -31,7 +31,7 @@
           title="点击复制邮箱"
           @click="copyToClipboard(user.mail)"
         >
-          邮箱在这里: {{ user.mail }}
+          单击拷贝邮箱: {{ user.mail }}
         </div>
         <!-- message box end -->
 

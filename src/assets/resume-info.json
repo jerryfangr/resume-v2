@@ -87,5 +87,15 @@
       "tags": ["微信小程序", "云开发", "uniapp", "Vue"],
       "description": ""
     }
+  ],
+  "experience": [
+    {
+      "time": "2017.6-2017.8",
+      "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium"
+    },
+    {
+      "time": "2019.6-2019.12",
+      "description": "Proin quam velit, efficitur vel neque vitae, rhoncus commodo mi. Suspendisse finibus mauris et bibendum molestie. Aenean ex augue, varius et pulvinar in, pretium non nisi."
+    }
   ]
 }

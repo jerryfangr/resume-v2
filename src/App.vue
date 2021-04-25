@@ -25,6 +25,11 @@
     <!-- <title-section>其他</title-section> -->
     <!-- other end -->
 
+    <!-- work experience start -->
+    <title-section ref="titleExperience">工作</title-section>
+    <experience-section :experience="sectionData.experience"></experience-section>
+    <!-- work experience end -->
+
     <!-- message board start -->
     <title-section ref="titleMessage">留言</title-section>
     <message-section></message-section>
@@ -43,10 +48,9 @@ import mainSection from './components/main-section/main-section';
 import skillSection from './components/skill-section/skill-section';
 import portfolioSection from './components/portfolio-section/portfolio-section';
 import messageSection from './components/message-section/message-section';
+import experienceSection from './components/experience-section/experience-section';
 // personal info
 import resumeInfo from './assets/resume-info.json';
-
-console.log(resumeInfo);
 
 export default {
   name: 'App',
@@ -57,6 +61,7 @@ export default {
     mainSection,
     skillSection,
     portfolioSection,
+    experienceSection,
     messageSection,
   },
 
@@ -65,13 +70,20 @@ export default {
       this.$refs.titleMain, 
       this.$refs.titleSkill, 
       this.$refs.titlePortfolio, 
+      this.$refs.titleExperience,
       this.$refs.titleMessage, 
     ]
   },
 
   data() {
     return {
-      sectionNames: ['main', 'skill', 'portfolio', 'message'],
+      sectionNames: [
+        'main', 
+        'skill', 
+        'portfolio', 
+        'experience',
+        'message', 
+      ],
       sectionAnchor: [],
       sectionData: resumeInfo
     }

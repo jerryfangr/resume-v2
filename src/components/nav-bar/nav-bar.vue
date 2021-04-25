@@ -10,9 +10,13 @@
           @click="scrollTo($event, index)"
           ref="section"
         >
-          <svg class="icon" aria-hidden="true">
-            <use :xlink:href="'#icon-' + name"></use>
-          </svg>
+          <div class="wrapper">
+            <svg class="icon" aria-hidden="true">
+              <use :xlink:href="'#icon-' + name"></use>
+            </svg>
+
+            <div class="name">{{ name }}</div>
+          </div>
         </li>
       </ul>
     </div>
@@ -92,37 +96,65 @@ export default {
 <style lang="scss" scoped>
 /* layout */
 nav.dock {
-  display: inline-block;
-  width: 100vmin;
   @include abs-layout(bottom, 0);
+  max-width: 100vmin;
   position: fixed;
   z-index: 10;
+  text-align: center;
+
   .container {
+    display: inline-block;
     height: 12vmin;
+    padding: 1vmin 4vmin;
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 0 1vmin 0 rgba(97, 104, 194, 0.37);
     backdrop-filter: blur(4px);
-    position: relative;
+
     .dock-icons {
       display: inline-block;
       white-space: nowrap;
       font-size: 0;
-      @include abs-layout(center);
-      li {
-        list-style: none;
-        display: inline-block;
-      }
 
       .section-icon {
-        &:nth-child(n+2) {
-          margin-left: 2vmin;
-        }
-        font-size: 7vmin;
+        display: inline-block;
         text-align: center;
-        transition: all .1s;
+        position: relative;
+
+        .wrapper {
+          transition: all .1s;
+          width: 13vmin;
+          height: 10vmin;
+          font-size: 7vmin;
+          position: relative;
+
+          svg.icon {
+            @include abs-bottom(2.8vmin);
+          }
+
+          .name {
+            @include abs-bottom();
+            font-size: 2.2vmin;
+            font-weight: 600;
+          }
+        }
+
         &:hover {
           cursor: pointer;
-          font-size: 9vmin;
+
+          .wrapper {
+            font-size: 9vmin;
+
+            svg.icon {
+              @include abs-bottom(3.5vmin);
+            }
+            .name {
+              font-size: 2.5vmin;
+            }
+          }
+        }
+
+        &:nth-child(n+2) {
+          margin-left: 2vmin;
         }
       }
 

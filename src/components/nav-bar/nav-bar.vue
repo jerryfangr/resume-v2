@@ -122,13 +122,13 @@ nav.dock {
 
         .wrapper {
           transition: all .1s;
-          width: 13vmin;
+          width: 16vmin;
           height: 10vmin;
           font-size: 7vmin;
           position: relative;
 
           svg.icon {
-            @include abs-bottom(2.8vmin);
+            @include abs-bottom(3vmin);
           }
 
           .name {

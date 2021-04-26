@@ -122,7 +122,7 @@ section.portfolio {
     .container {
       text-align: left;
       display: inline-block;
-      background-color: #f9f9f9;
+      background-color: #f6f7f8;
       width: 48vmin;
       height: 47vmin;
       transition: all 0.5s;
@@ -198,7 +198,7 @@ section.portfolio {
         }
       }
       .portfolio-info.qr-button {
-        border-top: 2px solid #f0f0f3;
+        border-top: 2px solid #ededed;
       }
     }
   }
@@ -211,7 +211,7 @@ section.portfolio {
       padding: 1vmin 2vmin;
       padding-bottom: 10vmin;
       transition-duration: .6s;
-      transition-property: transform box-shaodw;
+      transition-property: transform, box-shadow;
       transform: rotateY(180deg);
       .portfolio-info {
         display: none;
@@ -222,7 +222,7 @@ section.portfolio {
         display: block;
         width: 100%;
         position: absolute;
-        border-top: 2px solid #f0f0f3;
+        border-top: 2px solid #ededed;
         left: 0;
         bottom: 0;
     }
@@ -316,7 +316,7 @@ section.portfolio {
           font-size: 1.85vmin * $scale;
         }
         .portfolio-info.qr-button {
-          border-top: 2px * $scale solid #f0f0f3;
+          border-top: 2px * $scale solid #ededed;
         }
       }
     }
@@ -328,7 +328,7 @@ section.portfolio {
         padding-bottom: 10vmin * $scale;
 
         .portfolio-info.back-button {
-          border-top: 2px * $scale solid #f0f0f3;
+          border-top: 2px * $scale solid #ededed;
         }
     
         .description {

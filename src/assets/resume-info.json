@@ -80,12 +80,12 @@
       "description": "一个在线匿名聊天应用，支持群聊和私聊，未读消息提示，消息缓存。\n服务器借助express框架快速搭建响应常规Http请求，Socket.io构建websocket服务端，双方通过express-session中间件共享session。\n网页端环境通过vue-cli构建环境，typescript为主要开发语言，Vuex共享用户信息，localstorage存放聊天记录。"
     },
     {
-      "title": "箱",
-      "previewUrl": "#",
-      "codeUrl": "#",
-      "qRCodeUrl": "#",
-      "tags": ["微信小程序", "云开发", "uniapp", "Vue", "sass"],
-      "description": ""
+      "title": "小小音乐播放",
+      "previewUrl": "https://z3.ax1x.com/2021/06/09/2cC0zV.jpg",
+      "codeUrl": "https://github.com/jerryfangr/little-music",
+      "qRCodeUrl": "https://z3.ax1x.com/2021/06/09/2cC6Z4.png",
+      "tags": ["微信小程序", "uniapp", "Vue", "sass"],
+      "description": "一个用于播放在线音乐的微信小程序。\n起源于dribbble上一张挺好看的设计草稿，由于原设计图残缺很多，不得不补足了修改一部份界面，设计了界面按钮的动效。\n小程序基于uni-app快速搭建，采用Vuex共享数据，小程序虽然看似有多个界面，实际只设计了一个page显示歌曲列表，其余皆为弹窗组件。\n最后由于设计图本身功能缺失，小程序还缺失歌单等界面，部分交互效果警告提示也不够任性化，等待后续设计能力提高后补足。"
     }
   ],
   "experience": [

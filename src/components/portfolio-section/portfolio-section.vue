@@ -109,6 +109,13 @@ export default {
 
 <style lang="scss" scoped>
 section.portfolio {
+
+  animate-fast2 {
+    animation-duration: 0.6s;
+    --animate-duration: 0.6s;
+  }
+
+
   text-align: center;
 
   .portfolio-item {

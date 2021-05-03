@@ -14,11 +14,11 @@
         </div>
 
         <div v-if="timer > 2" class="message-box age animate__animated animate__bounceIn animate__faster">
-          {{ user.age }}岁了
+          年龄: {{ user.age }}岁
         </div>
 
         <div v-if="timer > 3" class="message-box gender animate__animated animate__bounceIn animate__faster">
-          右图显然是{{ user.gender }}的
+          性别: {{ user.gender }}
         </div>
 
         <div v-if="timer > 4" class="message-box work animate__animated animate__bounceIn animate__faster">
@@ -267,7 +267,7 @@ section.main {
         }
 
         .message-box.age {
-          top: 20vmin;
+          top: 21.5vmin;
           left: 2vmin;
         }
 

@@ -28,7 +28,7 @@
     {
       "title": "Vue",
       "level": "★★★★",
-      "description": "熟悉 vue基础语法与特性，如生命周期、模板语法、组件通信、计算属性、过滤器等。\n熟悉 vue拓展生态 vue-router和vuex，熟练使用vue-cli脚手架开发应用。\n了解 vue3 部分新特性 如Proxy来代理数据、Composition API、Fragments等"
+      "description": "熟悉 vue基础语法与特性，如生命周期、模板语法、组件通信、计算属性、过滤器等。\n熟悉 vue拓展生态 vue-router和vuex，熟练使用vue-cli脚手架开发应用。\n了解vue3 新特性 如Proxy来代理数据、Composition API可以更好支持Hooks,对TS更好的支持。"
     },
     {
       "title": "小程序",

@@ -18,7 +18,7 @@
     {
       "title": "JavaScript",
       "level": "★★★★★",
-      "description": "熟悉 JavaScript基础语法与特性，如作用域、闭包、原型、原型链、异步等。\n熟悉 dom与bom常见api、ajax。\n熟悉 es6、es7等新语法与新特性，如promise(async)、generator、class、解构等。"
+      "description": "熟悉 JavaScript基础语法与特性，如作用域、闭包、原型、原型链、异步等。\n熟悉 dom与bom常见api、ajax。\n熟悉 ECMAScript 新的语法与特性，如promise(async)、generator、class、解构等。"
     },
     {
       "title": "TypeScript",
@@ -84,7 +84,7 @@
       "previewUrl": "https://z3.ax1x.com/2021/06/09/2cC0zV.jpg",
       "codeUrl": "https://github.com/jerryfangr/little-music",
       "qRCodeUrl": "https://z3.ax1x.com/2021/06/09/2cC6Z4.png",
-      "tags": ["微信小程序", "uniapp", "Vue", "sass"],
+      "tags": ["微信小程序", "uniapp", "Vue", "Sass"],
       "description": "一个用于播放在线音乐的微信小程序。\n起源于dribbble上一张挺好看的设计草稿，由于原设计图残缺很多，不得不补足了修改一部份界面，设计了界面按钮的动效。\n小程序基于uni-app快速搭建，采用Vuex共享数据，小程序虽然看似有多个界面，实际只设计了一个page显示歌曲列表，其余皆为弹窗组件。\n最后由于设计图本身功能缺失，小程序还缺失歌单等界面，部分交互效果警告提示也不够任性化，等待后续设计能力提高后补足。"
     },
     {
@@ -92,7 +92,7 @@
       "previewUrl": "https://z3.ax1x.com/2021/06/23/RnhQqH.jpg",
       "codeUrl": "https://github.com/jerryfangr/todo-demos/tree/main/vue3-ts-demo",
       "qRCodeUrl": "https://z3.ax1x.com/2021/06/23/Rnhxwd.png",
-      "tags": ["Vue3", "Vuex4", "Vue-router4", "TypeScript", "Sass", "Naive-ui", "vite2"],
+      "tags": ["Vue3", "Vuex4", "Vue-router4", "TypeScript", "Sass", "Naive-ui", "Vite2"],
       "description": "一个用于尝鲜vue3而开发的todo。\n全程使用严格配置的TypeScript开发，使用vite2为构建工具，对vue3为的核心的生态新特性进行实际项目的体验，页面样式方面也采用最近推出的Naive-ui。\n完成了一个todo应具有完备功能。主要为表单与表单内todo item的增删改。"
     }
   ],

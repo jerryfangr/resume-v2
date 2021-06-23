@@ -33,7 +33,7 @@
     {
       "title": "小程序",
       "level": "★★★★",
-      "description": "熟悉 微信小程序原生语法与云开发(函数、数据库、存储)。\n熟悉 微信小程序特点 如：dom api缺失、导航栏配置、page、组件通信、监听等。\n熟悉 uniapp框架下通过vue语法开发小程序，能熟练使用flex布局。"
+      "description": "熟悉 微信小程序原生语法，了解云开发(函数、数据库、存储)。\n熟悉 微信小程序特点 如：dom api缺失、导航栏配置、page、组件通信、监听等。\n熟悉 uniapp框架下通过vue语法开发小程序，能熟练使用flex布局。"
     },
     {
       "title": "移动端",
@@ -43,7 +43,7 @@
     {
       "title": "工具",
       "level": "★★★★",
-      "description": "熟悉 webpack打包工具与常见loader与插件的配置。\n熟悉 常见配置 如babel、corejs、postcss、less/sass、css、style等。\n熟悉 commonjs和es6 module规范。"
+      "description": "熟悉 webpack打包工具与常见loader与插件的配置，常见配置 如babel、corejs、postcss、less/sass、css、style等。\n熟悉 commonjs和es6 module规范。\n了解Vite的基本使用与配置。"
     }
   ],
   "portfolios": [
@@ -76,7 +76,7 @@
       "previewUrl": "https://z3.ax1x.com/2021/04/24/cjmv01.jpg",
       "codeUrl": "https://github.com/jerryfangr/simple-chatapp",
       "qRCodeUrl": "https://z3.ax1x.com/2021/04/24/cjnEnA.png",
-      "tags": ["Vue", "Vue-router", "Vuex", "TypeScript","Sass", "Socket.io", "NodeJs", "Express"],
+      "tags": ["Vue2", "Vue-router", "Vuex", "TypeScript","Sass", "Socket.io", "NodeJs", "Express"],
       "description": "一个在线匿名聊天应用，支持群聊和私聊，未读消息提示，消息缓存。\n服务器借助express框架快速搭建响应常规Http请求，Socket.io构建websocket服务端，双方通过express-session中间件共享session。\n网页端环境通过vue-cli构建环境，typescript为主要开发语言，Vuex共享用户信息，localstorage存放聊天记录。"
     },
     {
@@ -86,6 +86,14 @@
       "qRCodeUrl": "https://z3.ax1x.com/2021/06/09/2cC6Z4.png",
       "tags": ["微信小程序", "uniapp", "Vue", "sass"],
       "description": "一个用于播放在线音乐的微信小程序。\n起源于dribbble上一张挺好看的设计草稿，由于原设计图残缺很多，不得不补足了修改一部份界面，设计了界面按钮的动效。\n小程序基于uni-app快速搭建，采用Vuex共享数据，小程序虽然看似有多个界面，实际只设计了一个page显示歌曲列表，其余皆为弹窗组件。\n最后由于设计图本身功能缺失，小程序还缺失歌单等界面，部分交互效果警告提示也不够任性化，等待后续设计能力提高后补足。"
+    },
+    {
+      "title": "vue3 todo",
+      "previewUrl": "https://z3.ax1x.com/2021/06/23/RnhQqH.jpg",
+      "codeUrl": "https://github.com/jerryfangr/todo-demos/tree/main/vue3-ts-demo",
+      "qRCodeUrl": "https://z3.ax1x.com/2021/06/23/Rnhxwd.png",
+      "tags": ["Vue3", "Vuex4", "Vue-router4", "TypeScript", "Sass", "Naive-ui", "vite2"],
+      "description": "一个用于尝鲜vue3而开发的todo。\n全程使用严格配置的TypeScript开发，使用vite2为构建工具，对vue3为的核心的生态新特性进行实际项目的体验，页面样式方面也采用最近推出的Naive-ui。\n完成了一个todo应具有完备功能。主要为表单与表单内todo item的增删改。"
     }
   ],
   "experience": [

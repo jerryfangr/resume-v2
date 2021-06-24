@@ -44,6 +44,11 @@
       "title": "工具",
       "level": "★★★★",
       "description": "熟悉 webpack打包工具与常见loader与插件的配置，常见配置 如babel、corejs、postcss、less/sass、css、style等。\n熟悉 commonjs和es6 module规范。\n了解Vite的基本使用与配置。"
+    },
+    {
+      "title": "Jest",
+      "level": "★★★",
+      "description": "了解Jest的基本测试案例编写，熟悉Jest的基本数值匹配，异步测试。\n熟悉 Jest的4个生命周期钩子以及在不同层级describe下钩子的作用域。"
     }
   ],
   "portfolios": [

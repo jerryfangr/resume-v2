@@ -404,7 +404,10 @@ section.main {
 
         .message-box.mail {
           bottom: 0.2vmin;
-          left: 27vmin;
+          left: 0;
+          right: 0;
+          margin: auto;
+          max-width: 18em;          
           cursor: pointer;
         }
       }

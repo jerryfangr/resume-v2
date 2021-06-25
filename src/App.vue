@@ -116,6 +116,7 @@ body {
   max-width:100%;
   min-height: 100vh;
   background: #e6eaf0;
+  padding: 0 5px;
   section.download {
     margin-top: 5vmin;
     text-align: center;

@@ -243,7 +243,7 @@ export default {
 
     .message-list {
       .message-item {
-        width: 100vmin;  
+        width: 100%;  
         min-height: 25vmin;
         padding: 3vmin;
         background-color: #ffffff;
@@ -271,7 +271,7 @@ export default {
           }
 
           .title-info {
-            width: 66vmin;
+            width: 66%;
             text-align: left;
             padding: 0 2vmin;
 
@@ -288,7 +288,7 @@ export default {
           }
 
           .operation {
-            width: 20vmin;
+            width: 25%;
             float: right;
             &::after {
               @include clearFix();
